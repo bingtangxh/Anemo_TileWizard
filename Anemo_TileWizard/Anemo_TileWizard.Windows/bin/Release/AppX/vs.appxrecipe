@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DKR-PC-W11</Machine>
+    <WindowsUser>ninei</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
+    <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>BingtangXH.Anemo-TileWizard</PackageIdentityName>
+    <PackageIdentityPublisher>CN=ninei</PackageIdentityPublisher>
+    <IntermediateOutputPath>D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <RegisteredManifestChecksum>D645B7D8D91EA48225AF367C8B61EE5781038E03913719F9D6551D19E92D9EAA</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>BingtangXH.Anemo-TileWizard_1.1.2.27_neutral__j9gfswm1v8pve</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>BingtangXH.Anemo-TileWizard_j9gfswm1v8pve!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>BingtangXH.Anemo-TileWizard</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=ninei</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.2.27</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bin\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-05T15:25:21.281</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2025-04-05T15:25:20.939</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\BadgeLogo.scale-100.png">
+      <PackagePath>images\BadgeLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-27T15:23:51.362</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\BadgeLogo.scale-140.png">
+      <PackagePath>images\BadgeLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-27T15:23:32.628</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\BadgeLogo.scale-180.png">
+      <PackagePath>images\BadgeLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-27T15:23:15.257</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-100.png">
+      <PackagePath>images\logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-04T16:31:27.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-140.png">
+      <PackagePath>images\logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:08:24.296</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-180.png">
+      <PackagePath>images\logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:08:11.791</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-80.png">
+      <PackagePath>images\logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:08:35.149</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\PNG5231.png">
+      <PackagePath>images\PNG5231.png</PackagePath>
+      <Modified>2025-03-10T13:04:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-100.png">
+      <PackagePath>images\smalllogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-05T06:22:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-140.png">
+      <PackagePath>images\smalllogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-05T06:21:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-180.png">
+      <PackagePath>images\smalllogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-05T06:21:21.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-80.png">
+      <PackagePath>images\smalllogo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:09:37.666</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-16.png">
+      <PackagePath>images\smalllogo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:10:31.708</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-256.png">
+      <PackagePath>images\smalllogo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:09:58.087</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-32.png">
+      <PackagePath>images\smalllogo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:10:20.772</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-48.png">
+      <PackagePath>images\smalllogo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:10:09.892</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\splashscreen.scale-100.png">
+      <PackagePath>images\splashscreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-04T16:28:59.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\splashscreen.scale-140.png">
+      <PackagePath>images\splashscreen.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-04T16:20:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\splashscreen.scale-180.png">
+      <PackagePath>images\splashscreen.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-04T16:27:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square310x310Logo.scale-100.png">
+      <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:09:00.090</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square310x310Logo.scale-80.png">
+      <PackagePath>images\Square310x310Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:09:21.108</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-100.png">
+      <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:07:39.759</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-140.png">
+      <PackagePath>images\Square70x70Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:07:27.142</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-180.png">
+      <PackagePath>images\Square70x70Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T14:56:46.929</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-80.png">
+      <PackagePath>images\Square70x70Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:07:51.668</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\storelogo.scale-100.png">
+      <PackagePath>images\storelogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-04T16:30:13.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\storelogo.scale-140.png">
+      <PackagePath>images\storelogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:10:59.234</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\storelogo.scale-180.png">
+      <PackagePath>images\storelogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:10:45.426</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-100.png">
+      <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-05T06:42:43.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-140.png">
+      <PackagePath>images\Wide310x150Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:06:15.780</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-180.png">
+      <PackagePath>images\Wide310x150Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-05T06:35:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-80.png">
+      <PackagePath>images\Wide310x150Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-03-19T15:06:59.074</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Shared\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2025-04-05T14:21:57.019</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Shared\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2025-04-05T15:11:21.534</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bin\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-05T15:25:21.176</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.17018</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.17018</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

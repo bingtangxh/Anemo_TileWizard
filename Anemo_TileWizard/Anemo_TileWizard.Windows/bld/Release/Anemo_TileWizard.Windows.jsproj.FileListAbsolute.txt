@@ -1,0 +1,30 @@
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bin\Release\resources.pri
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bin\Release\AppxManifest.xml
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bin\Release\Anemo_TileWizard.Windows.build.appxrecipe
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\priconfig.xml
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\priconfig.xml.intermediate
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\layout.resfiles
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\layout.resfiles.intermediate
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\resources.resfiles
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\resources.resfiles.intermediate
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\pri.resfiles
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\pri.resfiles.intermediate
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\qualifiers.txt
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\qualifiers.txt.intermediate
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\MultipleQualifiersPerDimensionFound.txt
+D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\ProjectArchitectures.txt
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\resources.pri
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\AppxManifest.xml
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\Anemo_TileWizard.Windows.build.appxrecipe
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\priconfig.xml
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\priconfig.xml.intermediate
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\layout.resfiles
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\layout.resfiles.intermediate
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\resources.resfiles
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\resources.resfiles.intermediate
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\pri.resfiles
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\pri.resfiles.intermediate
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\qualifiers.txt
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\qualifiers.txt.intermediate
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\MultipleQualifiersPerDimensionFound.txt
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\ProjectArchitectures.txt

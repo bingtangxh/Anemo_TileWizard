@@ -1,0 +1,6 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"language-zh-hans-cn"
+
+[Files]
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\filemap.pri"			"resources.pri"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\js\default.js"			"js\default.js"

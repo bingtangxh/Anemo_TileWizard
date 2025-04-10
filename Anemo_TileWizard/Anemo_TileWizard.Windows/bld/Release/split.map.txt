@@ -1,0 +1,15 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"scale-100"
+"ResourceDimensions"		"language-zh-hans-cn"
+
+[Files]
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\split.pri"			"resources.pri"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\js\default.js"			"js\default.js"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\images\Wide310x150Logo.scale-100.png"			"images\Wide310x150Logo.scale-100.png"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\images\storelogo.scale-100.png"			"images\storelogo.scale-100.png"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\images\splashscreen.scale-100.png"			"images\splashscreen.scale-100.png"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\images\smalllogo.scale-100.png"			"images\smalllogo.scale-100.png"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\images\logo.scale-100.png"			"images\logo.scale-100.png"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\images\BadgeLogo.scale-100.png"			"images\BadgeLogo.scale-100.png"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\default.html"			"default.html"
+"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\css\default.css"			"css\default.css"

@@ -1,0 +1,5 @@
+﻿[ResourceMetadata]
+"ResourceDimensions"		"language-zh-hans-cn"
+
+[Files]
+"C:\Users\ninei\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Debug\filemap.pri"			"resources.pri"

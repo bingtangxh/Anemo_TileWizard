@@ -1,0 +1,52 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #002729;
+    padding: 2rem 5%;
+    background-image: url('/images/PNG5231.png');
+    background-size: cover; /* 使图片覆盖整个背景 */
+    background-position: center; /* 图片居中 */
+    background-repeat: no-repeat; /* 防止图片重复 */
+     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.57);
+}
+
+
+
+body, .win-type-xx-large, .win-type-x-large, .win-type-large, .win-type-medium, .win-type-small, .win-type-x-small, .win-type-xx-small, input, textarea, .win-textarea, button, select, option {
+    font-family: system-ui, sans-serif;
+}
+
+main {
+    padding: 2rem;
+}
+
+.block-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align:left;
+}
+
+#tileDetail0, #tileDetail1, #tileDetail2, #tileDetail3, #tileDetail4 {
+    display: block;
+    width: 100%;
+    height: 3rem;
+}
+
+.block-right {
+    display: block;
+    margin-left: auto;
+}
+
+ .custom-icon {
+    font-family: 'Segoe UI'; /* 使用系统默认字体 */
+    font-weight: bold;
+    font-size: 24pt; /* 放大字母 */
+    line-height: 1;
+    color: white; /* 保持Metro风格 */
+}
+#rollBack .win-appbarcommand-icon { font-size: 60px; padding: 0 8px; }

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>CialloWorldJS.WindowsPhone</title>
+
+    <!-- WinJS 引用 -->
+    <!-- 在运行时，ui-themed.css 基于用户的主题设置解析为 ui-themed.theme-light.css 
+    或 ui-themed.theme-dark.css。这是 MRT 资源加载功能的一部分。 -->
+    <link href="/css/ui-themed.css" rel="stylesheet" />
+    <script src="//Microsoft.Phone.WinJS.2.1/js/base.js"></script>
+    <script src="//Microsoft.Phone.WinJS.2.1/js/ui.js"></script>
+
+    <!-- CialloWorldJS.Phone 引用 -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body class="phone" style="overflow:auto">
+    <main>
+        <div>
+        <h1 class="text-center">Anemo TileWizard<!-- <span style="color:red">(Pre-Release)</span>--></h1>
+        <p>
+            锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
+            Set the details on lock screen (Length limits may apply)
+        </p>
+        <textarea id="tileDetail0" placeholder="标题" maxlength="254"></textarea>
+        <textarea id="tileDetail1" placeholder="段落 1" maxlength="254"></textarea>
+        <textarea id="tileDetail2" placeholder="段落 2" maxlength="254"></textarea>
+        <textarea id="tileDetail3" placeholder="段落 3 （在锁定屏幕上不显示）" maxlength="254"></textarea>
+        <textarea id="tileDetail4" placeholder="段落 4 （在锁定屏幕上不显示）" maxlength="254"></textarea>
+        <form>
+            <fieldset style="width:280px; float:left;">
+                <legend>选择磁贴文字排版</legend>
+                <div>
+                    <input type="radio"
+                           id="styleChoice1"
+                           name="style"
+                           value=1
+                           checked />
+                    <label for="styleChoice1">1L4S 每一行（第一行作为标题）</label>
+                    <br />
+                    <input type="radio" id="styleChoice2" name="style" value=5 />
+                    <label for="styleChoice2">0L5S 每一行（每行都是小字）</label>
+                    <br />
+                    <input type="radio" id="styleChoice3" name="style" value=9 />
+                    <label for="styleChoice3">1L1S 前两行（第一行作为标题）</label>
+                    <br />
+                    <input type="radio" id="styleChoice3" name="style" value=3 />
+                    <label for="styleChoice3">1L0S 第一行（大字）</label>
+                    <br />
+                    <input type="radio" id="styleChoice3" name="style" value=4 />
+                    <label for="styleChoice3">0L1S 第一行（小字）</label>
+
+                </div>
+            </fieldset>
+        </form>
+        </div>
+
+        <button id="come_out" class="block-right" style="width: auto;">唤出 Bar</button>
+
+        <div id="appBar" data-win-control="WinJS.UI.AppBar">
+            <!-- 添加按钮 -->
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'rollBack', label:'滚回', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态'}"
+                    onclick="getTile()"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'rollBack', label:'清空', icon:'&#xE106;', section:'global', tooltip:'让文本框的内容都变成空的'}"
+                    onclick="eraseInputBox()"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'cmdAbout', label:'关于', icon:'&#xE2C0;', section:'global', tooltip:'关于本程序'}"
+                    onclick="about()"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'submit2', label:'提交', icon:'&#xE001;', section:'global', tooltip:'提交输入的内容'}"
+                    onclick="updateTile()"></button>
+        </div>
+
+
+
+    </main>
+</body>
+</html>

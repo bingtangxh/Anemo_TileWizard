@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Anemo_TileWizard", "Anemo_TileWizard", "{B2D96EB0-83B9-4831-AAA5-BCA8CF1B8114}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Anemo_TileWizard.Shared", "..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.shproj", "{A7D771A9-9D69-4849-9F7D-379C291E1BF5}"
+EndProject
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Anemo_TileWizard.Windows", "..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\Anemo_TileWizard.Windows.jsproj", "{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}"
+EndProject
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Anemo_TileWizard.WindowsPhone", "..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.WindowsPhone\Anemo_TileWizard.WindowsPhone.jsproj", "{F2B8BDC6-0373-4AD1-87C3-0313944909C7}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.projitems*{579e77a5-956f-45f1-9c7d-afeb45f9a2db}*SharedItemsImports = 5
+		..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.projitems*{a7d771a9-9d69-4849-9f7d-379c291e1bf5}*SharedItemsImports = 13
+		..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.projitems*{f2b8bdc6-0373-4ad1-87c3-0313944909c7}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|ARM.ActiveCfg = Debug|ARM
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|ARM.Build.0 = Debug|ARM
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|ARM.Deploy.0 = Debug|ARM
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|x64.ActiveCfg = Debug|x64
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|x64.Build.0 = Debug|x64
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|x64.Deploy.0 = Debug|x64
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|x86.ActiveCfg = Debug|x86
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|x86.Build.0 = Debug|x86
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Debug|x86.Deploy.0 = Debug|x86
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|ARM.ActiveCfg = Release|ARM
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|ARM.Build.0 = Release|ARM
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|ARM.Deploy.0 = Release|ARM
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|x64.ActiveCfg = Release|x64
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|x64.Build.0 = Release|x64
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|x64.Deploy.0 = Release|x64
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|x86.ActiveCfg = Release|x86
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|x86.Build.0 = Release|x86
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}.Release|x86.Deploy.0 = Release|x86
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|ARM.Build.0 = Debug|ARM
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|x64.Build.0 = Debug|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|x86.ActiveCfg = Debug|x86
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|x86.Build.0 = Debug|x86
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Debug|x86.Deploy.0 = Debug|x86
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|ARM.ActiveCfg = Release|ARM
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|ARM.Build.0 = Release|ARM
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|ARM.Deploy.0 = Release|ARM
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|x64.ActiveCfg = Release|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|x64.Build.0 = Release|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|x64.Deploy.0 = Release|Any CPU
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|x86.ActiveCfg = Release|x86
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|x86.Build.0 = Release|x86
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7D771A9-9D69-4849-9F7D-379C291E1BF5} = {B2D96EB0-83B9-4831-AAA5-BCA8CF1B8114}
+		{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB} = {B2D96EB0-83B9-4831-AAA5-BCA8CF1B8114}
+		{F2B8BDC6-0373-4AD1-87C3-0313944909C7} = {B2D96EB0-83B9-4831-AAA5-BCA8CF1B8114}
+	EndGlobalSection
+EndGlobal
