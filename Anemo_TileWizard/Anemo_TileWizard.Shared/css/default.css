@@ -6,9 +6,9 @@ body {
     background-color: #002729;
     padding: 2rem 5%;
     background-image: url('/images/PNG5231.png');
-    background-size: cover; /* 使图片覆盖整个背景 */
-    background-position: center; /* 图片居中 */
-    background-repeat: no-repeat; /* 防止图片重复 */
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
      box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.57);
 }
 
@@ -50,6 +50,14 @@ main {
     color: white; /* 保持Metro风格 */
 }
 #rollBack .win-appbarcommand-icon { font-size: 60px; padding: 0 8px; }
+
+#content-container {
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色背景确保可读性 */
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 
 #slideshow-container {
             position: relative;
@@ -127,3 +135,101 @@ main {
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        #background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: overlay;
+    transition: background-image 0.5s ease-in-out;
+}
+
+#content-container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.wallpaper-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.wallpaper-controls button {
+    background: #0078d7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.wallpaper-controls button:hover {
+    background: #106ebe;
+}
+
+/* 添加信息显示区域的样式 */
+#wallpaper-info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 50%;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+#wallpaper-info:hover {
+    opacity: 0.9;
+}
+
+#wallpaper-copyright {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* 控制面板样式调整 */
+.wallpaper-controls {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    z-index: 10;
+}
+
+.wallpaper-controls button {
+    background: #0078d7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 2px 0;
+}
+
+.wallpaper-controls button:hover {
+    background: #106ebe;
+}

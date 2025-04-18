@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <title>CialloWorldJS.WindowsPhone</title>
+    <title>Anemo TileWizard</title>
 
     <!-- WinJS 引用 -->
-    <!-- 在运行时，ui-themed.css 基于用户的主题设置解析为 ui-themed.theme-light.css 
+    <!-- 在运行时，ui-themed.css 基于用户的主题设置解析为 ui-themed.theme-light.css
     或 ui-themed.theme-dark.css。这是 MRT 资源加载功能的一部分。 -->
     <link href="/css/ui-themed.css" rel="stylesheet" />
     <script src="//Microsoft.Phone.WinJS.2.1/js/base.js"></script>
@@ -17,9 +17,18 @@
     <script src="/js/default.js"></script>
 </head>
 <body class="phone" style="overflow:auto">
-    <main>
-        <div>
-            <h1 class="text-center">Anemo TileWizard<!-- <span style="color:red">(Pre-Release)</span>--></h1>
+
+        <main>
+            <div id="background-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1; background-image:url('images/1.png');
+        background-size:cover;
+        background-position:center;">
+            </div>
+
+            <div id="wallpaper-info" style="position:fixed;bottom:20px;right:20px;max-width:50%;background:rgba(0,0,0,0.7);color:white;padding:10px;border-radius:5px;display:none;">
+                <p id="wallpaper-copyright" style="margin:0;font-size:14px;"></p>
+            </div>
+
+            <h1 class="text-center">Anemo TileWizard <span style="color:red">(Pre-Release)</span></h1>
             <p>
                 锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
                 Set the details on lock screen (Length limits may apply)
@@ -27,9 +36,9 @@
             <textarea id="tileDetail0" placeholder="标题" maxlength="254"></textarea>
             <textarea id="tileDetail1" placeholder="段落 1" maxlength="254"></textarea>
             <textarea id="tileDetail2" placeholder="段落 2" maxlength="254"></textarea>
-            <textarea id="tileDetail3" placeholder="段落 3 （在锁定屏幕上不显示）" maxlength="254"></textarea>
-            <textarea id="tileDetail4" placeholder="段落 4 （在锁定屏幕上不显示）" maxlength="254"></textarea>
-            <div id="radioFlyout" data-win-control="WinJS.UI.Flyout">
+            <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）" maxlength="254"></textarea>
+            <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）" maxlength="254"></textarea>
+            <div id="radioFlyout">
                 <form>
                     <fieldset style="width:280px; float:left;">
                         <legend>选择磁贴文字排版</legend>
@@ -47,57 +56,77 @@
                             <input type="radio" id="styleChoice3" name="style" value=9 />
                             <label for="styleChoice3">1L1S 前两行（第一行作为标题）</label>
                             <br />
-                            <input type="radio" id="styleChoice3" name="style" value=3 />
-                            <label for="styleChoice3">1L0S 第一行（大字）</label>
+                            <input type="radio" id="styleChoice4" name="style" value=3 />
+                            <label for="styleChoice4">1L0S 第一行（大字）</label>
                             <br />
-                            <input type="radio" id="styleChoice3" name="style" value=4 />
-                            <label for="styleChoice3">0L1S 第一行（小字）</label>
+                            <input type="radio" id="styleChoice5" name="style" value=4 />
+                            <label for="styleChoice5">0L1S 第一行（小字）</label>
 
                         </div>
                     </fieldset>
                 </form>
             </div>
-        </div>
-
-        <button id="come_out" class="block-right" style="width: auto;">唤出 Bar</button>
-
-        <div id="appBar" data-win-control="WinJS.UI.AppBar">
-            <!-- 添加按钮 -->
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'rollBack', label:'滚回', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态'}"
-                    onclick="getTile()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'rollBack', label:'清空', icon:'&#xE106;', section:'global', tooltip:'让文本框的内容都变成空的'}"
-                    onclick="eraseInputBox()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'cmdAbout', label:'关于', icon:'&#xE2C0;', section:'global', tooltip:'关于本程序'}"
-                    onclick="about()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'submit2', label:'提交', icon:'&#xE001;', section:'global', tooltip:'提交输入的内容'}"
-                    onclick="updateTile()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand" 
-                    data-win-options="{icon:'settings', id:'', label:'设置锁屏', onclick:null, section:'global', type:'button'}" 
-                    onclick="setLockScreenBackground()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand" 
-                    data-win-options="{icon:'settings', id:'', label:'下载', onclick:null, section:'global', type:'button'}" 
-                    onclick="saveImage()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"
-                    data-win-options="{id:'radioButton', label:'排版', icon:'list',section:'selection', tooltip:'选择文字磁贴的排版'}"
-                    ></button>
-        </div>
-
-        <div id="slideshow-container">
-            <!-- 显示加载进度条 -->
-            <div class="progress-ring" data-win-control="WinJS.UI.ProgressRing"></div>
-            <p>正在加载Bing壁纸...</p>
-        </div>
-
-        <!-- 切换按钮 -->
-        <button id="prev-button" class="nav-button" disabled onclick="prev_wp()">←</button>
-        <button id="next-button" class="nav-button" disabled onclick="next_wp()">→</button>
+            <button id="come_out" class="block-right" style="width: auto;">唤出 Bar</button>
 
 
+            <div id="appBar" data-win-control="WinJS.UI.AppBar">
+                <!-- 添加按钮 -->
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{id:'rollBack', label:'滚回', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态'}"
+                        onclick="getTile()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{id:'rollBack', label:'清空', icon:'&#xE106;', section:'global', tooltip:'让文本框的内容都变成空的'}"
+                        onclick="eraseInputBox()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{id:'cmdAbout', label:'关于', icon:'emoji2', section:'global', tooltip:'关于本程序'}"
+                        onclick="about()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{id:'submit2', label:'提交', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
+                        onclick="updateTile()"></button>
 
-    </main>
-</body>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{id:'openinBrowser', label:'浏览器打开（无法使用）', icon:'list',section:'selection', tooltip:'选择文字磁贴的排版'}"
+                        onclick="openinBrowser()"
+                        ></button>
+            </div>
+            <fieldset style="width:280px; float:left;">
+                <legend>选项</legend>
+                <div>
+                    <label class="win-switch">
+                        <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox">
+                        <span class="win-switch-content">提交时一并设置锁屏壁纸</span>
+                        <span class="win-switch-track">
+                            <span class="win-switch-thumb"></span>
+                        </span>
+                    </label>
+                </div>
+                <div>
+                    <label class="win-switch">
+                        <input type="checkbox" class="win-switch-input" id="isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox">
+                        <span class="win-switch-content">切换壁纸时一并复制描述</span>
+                        <span class="win-switch-track">
+                            <span class="win-switch-thumb"></span>
+                        </span>
+                    </label>
+                </div>
+            </fieldset>
+
+
+            <div style="position:fixed;bottom:77px;right:20px;background:rgba(0,0,0,0.7);padding:10px;border-radius:5px;">
+                <p style="margin:0 0 10px 0;color:white;">当前壁纸 Current:<span id="current-wallpaper-index"></span></p>
+                <button onclick="prevWallpaper()" style="margin-right:5px;">←</button>
+                <button onclick="nextWallpaper()">→</button>
+            </div>
+            <!-- 切换按钮
+            <button id="prev-button" class="nav-button" disabled onclick="prev_wp()">←</button>
+            <button id="next-button" class="nav-button" disabled onclick="next_wp()">→</button> -->
+
+
+
+
+        </main>
+
+    </body>
+
+
 </html>

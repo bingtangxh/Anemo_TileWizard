@@ -1,0 +1,21 @@
+﻿.settingsPane {
+    width: 346px;
+    height: 100%;
+    overflow-y: auto;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: auto 1fr;
+}
+
+.settingsTitle {
+    -ms-grid-column: 2;
+    margin-left: 20px;
+    margin-top: 37px;
+    font-size: 28pt;
+}
+
+.settingsContent {
+    -ms-grid-row: 2;
+    margin: 25px 20px;
+    font-size: 10pt;
+}
