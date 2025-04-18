@@ -1,0 +1,15 @@
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\x64\Release\resources.pri
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\x64\Release\AppxManifest.xml
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\x64\Release\Anemo_TileWizard.Windows.build.appxrecipe
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\priconfig.xml
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\priconfig.xml.intermediate
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\layout.resfiles
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\layout.resfiles.intermediate
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\resources.resfiles
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\resources.resfiles.intermediate
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\pri.resfiles
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\pri.resfiles.intermediate
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\qualifiers.txt
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\qualifiers.txt.intermediate
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\MultipleQualifiersPerDimensionFound.txt
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\ProjectArchitectures.txt

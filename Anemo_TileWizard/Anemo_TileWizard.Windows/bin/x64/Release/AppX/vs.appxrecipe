@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DKR-GALPALYER3</Machine>
+    <WindowsUser>Weslie</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
+    <SolutionConfiguration>Release|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>BingtangXH.Anemo-TileWizard</PackageIdentityName>
+    <PackageIdentityPublisher>CN=ninei</PackageIdentityPublisher>
+    <IntermediateOutputPath>C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\x64\Release\</IntermediateOutputPath>
+    <RemoteDeploymentType>
+    </RemoteDeploymentType>
+    <PackageRegistrationPath>
+    </PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+    <RegisteredManifestChecksum>E781B027BFC009674617944D4D823E35472A17D8AA461E57EAD11D7F13EE1352</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>BingtangXH.Anemo-TileWizard_1.2.0.46_x64__j9gfswm1v8pve</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>BingtangXH.Anemo-TileWizard_j9gfswm1v8pve!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>BingtangXH.Anemo-TileWizard</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=ninei</RegisteredPackagePublisher>
+    <RegisteredVersion>1.2.0.46</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\x64\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-18T04:03:09.179</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2025-04-18T03:46:43.555</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-100.png">
+      <PackagePath>images\BadgeLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.196</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-140.png">
+      <PackagePath>images\BadgeLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.196</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-180.png">
+      <PackagePath>images\BadgeLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.196</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-100.png">
+      <PackagePath>images\logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-140.png">
+      <PackagePath>images\logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-180.png">
+      <PackagePath>images\logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.212</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-80.png">
+      <PackagePath>images\logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.216</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-100.png">
+      <PackagePath>images\smalllogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.216</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-140.png">
+      <PackagePath>images\smalllogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.216</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-180.png">
+      <PackagePath>images\smalllogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.220</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-80.png">
+      <PackagePath>images\smalllogo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.220</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-16.png">
+      <PackagePath>images\smalllogo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.220</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-256.png">
+      <PackagePath>images\smalllogo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.220</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-32.png">
+      <PackagePath>images\smalllogo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.224</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-48.png">
+      <PackagePath>images\smalllogo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.224</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-100.png">
+      <PackagePath>images\splashscreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.228</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-140.png">
+      <PackagePath>images\splashscreen.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.228</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-180.png">
+      <PackagePath>images\splashscreen.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.232</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-100.png">
+      <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.200</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-80.png">
+      <PackagePath>images\Square310x310Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.200</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-100.png">
+      <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.204</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-140.png">
+      <PackagePath>images\Square70x70Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.204</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-180.png">
+      <PackagePath>images\Square70x70Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.204</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-80.png">
+      <PackagePath>images\Square70x70Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.204</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-100.png">
+      <PackagePath>images\storelogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.232</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-140.png">
+      <PackagePath>images\storelogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.232</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-180.png">
+      <PackagePath>images\storelogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.236</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-100.png">
+      <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.204</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-140.png">
+      <PackagePath>images\Wide310x150Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.208</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-180.png">
+      <PackagePath>images\Wide310x150Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.208</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-80.png">
+      <PackagePath>images\Wide310x150Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-11T00:05:46.208</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\images\PNG5231.png">
+      <PackagePath>images\PNG5231.png</PackagePath>
+      <Modified>2025-04-18T03:46:43.531</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2025-04-18T03:46:43.523</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2025-04-18T03:46:43.531</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\x64\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2025-04-18T04:03:09.116</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.17018</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.17018</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

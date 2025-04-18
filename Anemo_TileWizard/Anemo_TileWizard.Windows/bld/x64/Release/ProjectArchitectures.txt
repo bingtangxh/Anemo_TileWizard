@@ -1,0 +1,1 @@
+C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\Anemo_TileWizard.Windows.jsproj;x64
