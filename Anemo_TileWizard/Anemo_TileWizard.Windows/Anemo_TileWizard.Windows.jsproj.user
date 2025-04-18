@@ -8,5 +8,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
+    <MachineName>DKR-LAJI2</MachineName>
   </PropertyGroup>
 </Project>

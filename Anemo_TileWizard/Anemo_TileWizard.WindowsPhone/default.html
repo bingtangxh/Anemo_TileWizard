@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <title>CialloWorldJS.WindowsPhone</title>
+    <title>Anemo TileWizard</title>
 
     <!-- WinJS 引用 -->
-    <!-- 在运行时，ui-themed.css 基于用户的主题设置解析为 ui-themed.theme-light.css 
+    <!-- 在运行时，ui-themed.css 基于用户的主题设置解析为 ui-themed.theme-light.css
     或 ui-themed.theme-dark.css。这是 MRT 资源加载功能的一部分。 -->
     <link href="/css/ui-themed.css" rel="stylesheet" />
     <script src="//Microsoft.Phone.WinJS.2.1/js/base.js"></script>
@@ -14,12 +14,83 @@
 
     <!-- CialloWorldJS.Phone 引用 -->
     <link href="/css/default.css" rel="stylesheet" />
+    <script>
+        var isPhoneMode = true;
+        function setasLockScreenBackground() {
+            return;
+        }
+        function saveandRestoreSelectedStyle_old() {
+            document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
+                if (e.target && e.target.type === 'radio') {
+                    var selectedStyle = e.target.value;
+                    localStorage.setItem("selectedStyle", selectedStyle);
+                    // popup('已保存 selectedStyle = ' + selectedStyle);
+                }
+            });
+
+            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            if (savedValue) {
+                document.querySelector('input[value="' + savedValue + '"]').checked = true;
+            } else {
+                document.querySelector('input[value="1"]').checked = true;
+            }
+        }
+        function saveandRestoreSelectedStyle() {
+            // 获取下拉菜单元素
+            var styleSelect = document.querySelector('#radioFlyout form select[name="style"]');
+
+            // 监听下拉菜单的变化事件
+            styleSelect.addEventListener('change', function (e) {
+                var selectedStyle = e.target.value;
+                localStorage.setItem("selectedStyle", selectedStyle);
+                // popup('已保存 selectedStyle = ' + selectedStyle);
+            });
+
+            // 从本地存储读取保存的值并设置下拉菜单
+            var savedValue = localStorage.getItem("selectedStyle");
+            if (savedValue) {
+                styleSelect.value = savedValue;
+            } else {
+                styleSelect.value = "1"; // 默认值
+            }
+        }
+        function submit() {
+            let selectedStyle;
+
+            selectedStyle = document.querySelector('select[name="style"]').value;
+
+            var type = Number(selectedStyle);
+
+            updateTile(type);
+            var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
+            if (isWallpaperSubmissionEnabled_CheckBox.checked) {
+                setasLockScreenBackground();
+            }
+        }
+        function openinBrowser() {
+            if (imageData.length === 0) {
+                popup('imageData.length 为 0');
+                return;
+            }
+
+            // 获取当前图片的URL
+            var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
+            window.location.href = imageUrl;
+        }
+    </script>
     <script src="/js/default.js"></script>
 </head>
 <body class="phone" style="overflow:auto">
-    <main>
-        <div>
-            <h1 class="text-center">Anemo TileWizard<!-- <span style="color:red">(Pre-Release)</span>--></h1>
+
+        <main>
+            <div id="background-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1; background-image:url('images/1.png');
+        background-size:cover;
+        background-position:center;">
+            </div>
+
+            
+
+            <h1 class="text-center">Anemo TileWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
             <p>
                 锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
                 Set the details on lock screen (Length limits may apply)
@@ -27,11 +98,34 @@
             <textarea id="tileDetail0" placeholder="标题" maxlength="254"></textarea>
             <textarea id="tileDetail1" placeholder="段落 1" maxlength="254"></textarea>
             <textarea id="tileDetail2" placeholder="段落 2" maxlength="254"></textarea>
-            <textarea id="tileDetail3" placeholder="段落 3 （在锁定屏幕上不显示）" maxlength="254"></textarea>
-            <textarea id="tileDetail4" placeholder="段落 4 （在锁定屏幕上不显示）" maxlength="254"></textarea>
-            <div id="radioFlyout" data-win-control="WinJS.UI.Flyout">
-                <form>
-                    <fieldset style="width:280px; float:left;">
+            <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）" maxlength="254"></textarea>
+            <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）" maxlength="254"></textarea>
+            
+            <fieldset style="width:auto; float:left;">
+                <legend>选项</legend>
+                <div>
+                    <label class="win-switch">
+                        <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox" disabled>
+                        <span class="win-switch-content">提交时一并设置锁屏壁纸（尚未实现）<br>Set lock screen background while submit (not available yet)</span>
+                        <span class="win-switch-track">
+                            <span class="win-switch-thumb"></span>
+                        </span>
+                    </label>
+                </div>
+                <div>
+                    <label class="win-switch">
+                        <input type="checkbox" class="win-switch-input" id="isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox">
+                        <span class="win-switch-content">切换壁纸时一并复制描述<br>Copy description to inputbox while changing wallpaper</span>
+                        <span class="win-switch-track">
+                            <span class="win-switch-thumb"></span>
+                        </span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <div id="radioFlyout">
+                <!--<form>
+                    <fieldset style="width:auto; float:left;">
                         <legend>选择磁贴文字排版</legend>
                         <div>
                             <input type="radio"
@@ -47,57 +141,70 @@
                             <input type="radio" id="styleChoice3" name="style" value=9 />
                             <label for="styleChoice3">1L1S 前两行（第一行作为标题）</label>
                             <br />
-                            <input type="radio" id="styleChoice3" name="style" value=3 />
-                            <label for="styleChoice3">1L0S 第一行（大字）</label>
+                            <input type="radio" id="styleChoice4" name="style" value=3 />
+                            <label for="styleChoice4">1L0S 第一行（大字）</label>
                             <br />
-                            <input type="radio" id="styleChoice3" name="style" value=4 />
-                            <label for="styleChoice3">0L1S 第一行（小字）</label>
+                            <input type="radio" id="styleChoice5" name="style" value=4 />
+                            <label for="styleChoice5">0L1S 第一行（小字）</label>
 
+                        </div>
+                    </fieldset>
+                </form>-->
+                <form>
+                    <fieldset style="width:auto; float:left;">
+                        <legend>选择磁贴文字排版</legend>
+                        <div>
+                            <select id="styleSelect" name="style">
+                                <option value="1" selected>1L4S （第一行作为标题）</option>
+                                <option value="5">0L5S （每行都是小字）</option>
+                                <option value="9">1L1S （第一行作为标题）</option>
+                                <option value="3">1L0S （大字）</option>
+                                <option value="4">0L1S （小字）</option>
+                            </select>
                         </div>
                     </fieldset>
                 </form>
             </div>
-        </div>
+            
+            <div id="appBar" data-win-control="WinJS.UI.AppBar">
+                <!-- 添加按钮 -->
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{label:'滚回 Rollback', icon:'&#xE1C5;', section:'selection', tooltip:'让文本框的内容变回上一次提交的状态'}"
+                        onclick="getTile()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{label:'清空 Clear', icon:'&#xE106;', section:'selection', tooltip:'让文本框的内容都变成空的'}"
+                        onclick="eraseInputBox()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{label:'关于 About', icon:'emoji2', section:'selection', tooltip:'关于本程序'}"
+                        onclick="about()"></button>
+                <!--<button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{label:'浏览器打开 Open in Browser', icon:'&#xE114;', section:'selection'}"
+                        onclick="openinBrowser()"></button>-->
+                <button data-win-control="WinJS.UI.AppBarCommand" id="prev-button"
+                        data-win-options="{label:'Prev', icon:'left', section:'global', tooltip:'上一张壁纸'}"
+                        onclick="prevWallpaper()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{label:'Submit', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
+                        onclick="submit()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand" id="next-button"
+                        data-win-options="{label:'Next', icon:'right', section:'global', tooltip:'下一张壁纸'}"
+                        onclick="nextWallpaper()"></button>
 
-        <button id="come_out" class="block-right" style="width: auto;">唤出 Bar</button>
+                <!--<button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"
+                        data-win-options="{label:'排版', icon:'list', section:'selection', tooltip:'选择文字磁贴的排版'}"
+                        onclick="showStyleSelection()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand" id="optionButton"
+                        data-win-options="{label:'选项', icon:'settings', section:'selection', tooltip:'设置锁屏背景相关选项'}"
+                        onclick="showOptions()"></button>-->
+            </div>
 
-        <div id="appBar" data-win-control="WinJS.UI.AppBar">
-            <!-- 添加按钮 -->
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'rollBack', label:'滚回', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态'}"
-                    onclick="getTile()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'rollBack', label:'清空', icon:'&#xE106;', section:'global', tooltip:'让文本框的内容都变成空的'}"
-                    onclick="eraseInputBox()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'cmdAbout', label:'关于', icon:'&#xE2C0;', section:'global', tooltip:'关于本程序'}"
-                    onclick="about()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{id:'submit2', label:'提交', icon:'&#xE001;', section:'global', tooltip:'提交输入的内容'}"
-                    onclick="updateTile()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand" 
-                    data-win-options="{icon:'settings', id:'', label:'设置锁屏', onclick:null, section:'global', type:'button'}" 
-                    onclick="setLockScreenBackground()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand" 
-                    data-win-options="{icon:'settings', id:'', label:'下载', onclick:null, section:'global', type:'button'}" 
-                    onclick="saveImage()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"
-                    data-win-options="{id:'radioButton', label:'排版', icon:'list',section:'selection', tooltip:'选择文字磁贴的排版'}"
-                    ></button>
-        </div>
+            <!-- 切换按钮
+            <button id="prev-button" class="nav-button" disabled onclick="prev_wp()">←</button>
+            <button id="next-button" class="nav-button" disabled onclick="next_wp()">→</button> -->
 
-        <div id="slideshow-container">
-            <!-- 显示加载进度条 -->
-            <div class="progress-ring" data-win-control="WinJS.UI.ProgressRing"></div>
-            <p>正在加载Bing壁纸...</p>
-        </div>
+        </main>
 
-        <!-- 切换按钮 -->
-        <button id="prev-button" class="nav-button" disabled onclick="prev_wp()">←</button>
-        <button id="next-button" class="nav-button" disabled onclick="next_wp()">→</button>
+    </body>
 
 
-
-    </main>
-</body>
 </html>

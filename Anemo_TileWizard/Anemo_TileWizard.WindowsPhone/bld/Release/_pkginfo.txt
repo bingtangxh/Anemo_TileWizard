@@ -1,1 +1,1 @@
-C:\AppPackages\Anemo_TileWizard.WindowsPhone_1.1.0.6_AnyCPU_Test\Anemo_TileWizard.WindowsPhone_1.1.0.6_AnyCPU.appx
+C:\AppPackages\Anemo_TileWizard.WindowsPhone_1.1.1.10_AnyCPU_Test\Anemo_TileWizard.WindowsPhone_1.1.1.10_AnyCPU.appx

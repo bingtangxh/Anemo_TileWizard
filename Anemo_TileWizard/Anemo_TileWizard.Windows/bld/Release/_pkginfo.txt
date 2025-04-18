@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 C:\AppPackages\Anemo_TileWizard.Windows_1.1.3.31_AnyCPU_Test\Anemo_TileWizard.Windows_1.1.3.31_AnyCPU.appx
+=======
+C:\AppPackages\Anemo_TileWizard.Windows_1.2.0.45_AnyCPU_Test\Anemo_TileWizard.Windows_1.2.0.45_AnyCPU.appx
+>>>>>>> 13ef43a1e6b8e5bd763a783f00d0c29b4c2bf4b3
