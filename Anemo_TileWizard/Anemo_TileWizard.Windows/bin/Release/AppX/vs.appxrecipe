@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DKR-PC-W11</Machine>
-    <WindowsUser>ninei</WindowsUser>
+    <Machine>DKR-GALPALYER3</Machine>
+    <WindowsUser>Weslie</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetOsVersion>6.3</TargetOsVersion>
     <TargetOsDescription>Windows 8.1</TargetOsDescription>
@@ -10,203 +10,203 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>BingtangXH.Anemo-TileWizard</PackageIdentityName>
     <PackageIdentityPublisher>CN=ninei</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>D645B7D8D91EA48225AF367C8B61EE5781038E03913719F9D6551D19E92D9EAA</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>BingtangXH.Anemo-TileWizard_1.1.2.27_neutral__j9gfswm1v8pve</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>559597792AEAA342954BFB07B02645EAFBC1563E4C69E8F888A262E0423C39F5</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>BingtangXH.Anemo-TileWizard_1.1.3.31_neutral__j9gfswm1v8pve</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>BingtangXH.Anemo-TileWizard_j9gfswm1v8pve!App</RegisteredUserModeAppID>
     <RegisteredPackageID>BingtangXH.Anemo-TileWizard</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=ninei</RegisteredPackagePublisher>
-    <RegisteredVersion>1.1.2.27</RegisteredVersion>
+    <RegisteredVersion>1.1.3.31</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bin\Release\AppxManifest.xml">
+    <AppXManifest Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-05T15:25:21.281</Modified>
+      <Modified>2025-04-11T02:35:25.380</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\default.html">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2025-04-05T15:25:20.939</Modified>
+      <Modified>2025-04-11T00:05:46.196</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-100.png">
       <PackagePath>images\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-27T15:23:51.362</Modified>
+      <Modified>2025-04-11T00:05:46.196</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\BadgeLogo.scale-140.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-140.png">
       <PackagePath>images\BadgeLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-27T15:23:32.628</Modified>
+      <Modified>2025-04-11T00:05:46.196</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\BadgeLogo.scale-180.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-180.png">
       <PackagePath>images\BadgeLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-27T15:23:15.257</Modified>
+      <Modified>2025-04-11T00:05:46.196</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-100.png">
       <PackagePath>images\logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-04T16:31:27.000</Modified>
+      <Modified>2025-04-11T00:05:46.212</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-140.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-140.png">
       <PackagePath>images\logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:08:24.296</Modified>
+      <Modified>2025-04-11T00:05:46.212</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-180.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-180.png">
       <PackagePath>images\logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:08:11.791</Modified>
+      <Modified>2025-04-11T00:05:46.212</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\logo.scale-80.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-80.png">
       <PackagePath>images\logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:08:35.149</Modified>
+      <Modified>2025-04-11T00:05:46.216</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\PNG5231.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\PNG5231.png">
       <PackagePath>images\PNG5231.png</PackagePath>
-      <Modified>2025-03-10T13:04:58.000</Modified>
+      <Modified>2025-04-11T00:05:46.200</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-100.png">
       <PackagePath>images\smalllogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-05T06:22:38.000</Modified>
+      <Modified>2025-04-11T00:05:46.216</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-140.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-140.png">
       <PackagePath>images\smalllogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-05T06:21:56.000</Modified>
+      <Modified>2025-04-11T00:05:46.216</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-180.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-180.png">
       <PackagePath>images\smalllogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-05T06:21:21.000</Modified>
+      <Modified>2025-04-11T00:05:46.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.scale-80.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-80.png">
       <PackagePath>images\smalllogo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:09:37.666</Modified>
+      <Modified>2025-04-11T00:05:46.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-16.png">
       <PackagePath>images\smalllogo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:10:31.708</Modified>
+      <Modified>2025-04-11T00:05:46.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-256.png">
       <PackagePath>images\smalllogo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:09:58.087</Modified>
+      <Modified>2025-04-11T00:05:46.220</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-32.png">
       <PackagePath>images\smalllogo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:10:20.772</Modified>
+      <Modified>2025-04-11T00:05:46.224</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\smalllogo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-48.png">
       <PackagePath>images\smalllogo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:10:09.892</Modified>
+      <Modified>2025-04-11T00:05:46.224</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\splashscreen.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-100.png">
       <PackagePath>images\splashscreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-04T16:28:59.000</Modified>
+      <Modified>2025-04-11T00:05:46.228</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\splashscreen.scale-140.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-140.png">
       <PackagePath>images\splashscreen.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-04T16:20:00.000</Modified>
+      <Modified>2025-04-11T00:05:46.228</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\splashscreen.scale-180.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-180.png">
       <PackagePath>images\splashscreen.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-04T16:27:46.000</Modified>
+      <Modified>2025-04-11T00:05:46.232</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square310x310Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-100.png">
       <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:09:00.090</Modified>
+      <Modified>2025-04-11T00:05:46.200</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square310x310Logo.scale-80.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-80.png">
       <PackagePath>images\Square310x310Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:09:21.108</Modified>
+      <Modified>2025-04-11T00:05:46.200</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-100.png">
       <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:07:39.759</Modified>
+      <Modified>2025-04-11T00:05:46.204</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-140.png">
       <PackagePath>images\Square70x70Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:07:27.142</Modified>
+      <Modified>2025-04-11T00:05:46.204</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-180.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-180.png">
       <PackagePath>images\Square70x70Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T14:56:46.929</Modified>
+      <Modified>2025-04-11T00:05:46.204</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Square70x70Logo.scale-80.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-80.png">
       <PackagePath>images\Square70x70Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:07:51.668</Modified>
+      <Modified>2025-04-11T00:05:46.204</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\storelogo.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-100.png">
       <PackagePath>images\storelogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-04T16:30:13.000</Modified>
+      <Modified>2025-04-11T00:05:46.232</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\storelogo.scale-140.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-140.png">
       <PackagePath>images\storelogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:10:59.234</Modified>
+      <Modified>2025-04-11T00:05:46.232</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\storelogo.scale-180.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-180.png">
       <PackagePath>images\storelogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:10:45.426</Modified>
+      <Modified>2025-04-11T00:05:46.236</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-100.png">
       <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-05T06:42:43.000</Modified>
+      <Modified>2025-04-11T00:05:46.204</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-140.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-140.png">
       <PackagePath>images\Wide310x150Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:06:15.780</Modified>
+      <Modified>2025-04-11T00:05:46.208</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-180.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-180.png">
       <PackagePath>images\Wide310x150Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-05T06:35:24.000</Modified>
+      <Modified>2025-04-11T00:05:46.208</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\images\Wide310x150Logo.scale-80.png">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-80.png">
       <PackagePath>images\Wide310x150Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-03-19T15:06:59.074</Modified>
+      <Modified>2025-04-11T00:05:46.208</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Shared\css\default.css">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2025-04-05T14:21:57.019</Modified>
+      <Modified>2025-04-11T00:05:45.970</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Shared\js\default.js">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2025-04-05T15:11:21.534</Modified>
+      <Modified>2025-04-11T00:05:45.974</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bin\Release\resources.pri">
+    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-05T15:25:21.176</Modified>
+      <Modified>2025-04-11T02:35:25.147</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
 
   有关程序包清单文件的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=241727
  -->
-  <Identity Name="BingtangXH.Anemo-TileWizard" Version="1.1.3.30" Publisher="CN=ninei" ProcessorArchitecture="neutral" />
+  <Identity Name="BingtangXH.Anemo-TileWizard" Version="1.1.3.31" Publisher="CN=ninei" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>Anemo-TileWizard.Windows</DisplayName>
     <PublisherDisplayName>BingtangXH</PublisherDisplayName>
@@ -61,7 +61,7 @@
     <build:Item Name="CodeSharingProject" Value="248F659F-DAC5-46E8-AC09-60EC9FC95053" />
     <build:Item Name="VisualStudio" Version="14.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2015" />
-    <build:Item Name="OperatingSystem" Version="10.0.26100.2308 (WinBuild.160101.0800)" />
+    <build:Item Name="OperatingSystem" Version="6.3.9600.16384 (winblue_rtm.130821-1623)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="14.0.25431.1" />
     <build:Item Name="ProjectGUID" Value="579e77a5-956f-45f1-9c7d-afeb45f9a2db" />
     <build:Item Name="MakePri.exe" Version="6.3.9600.17336 (winblue.150226-1500)" />
