@@ -7,7 +7,7 @@
 
   有关程序包清单文件的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=241727
  -->
-  <Identity Name="BingtangXH.Anemo-TileWizard.Phone" Version="1.1.1.7" Publisher="CN=ninei" ProcessorArchitecture="neutral" />
+  <Identity Name="BingtangXH.Anemo-TileWizard.Phone" Version="1.1.1.9" Publisher="CN=ninei" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="87325d0f-447c-4b47-a80e-a4bd6d43983a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Anemo-TileWizard.WindowsPhone</DisplayName>
