@@ -20,17 +20,14 @@ var imageData = []; // 存储所有图片数据
                 //您的应用程序。
                 // popup('您正在打开的是本程序的未完成版本，可能存在缺陷。\n如果你下载的来源仅有此版本，请留意有没有正式的版本发布。\nYou are now going to use a Pre-Release version. May contain mistakes.\nPlease pay attention to if the release version exists.');
 
-                
-                // popup(localStorage.getItem("isWallpaperSubmissionEnabled") + ' ' + localStorage.getItem("isDescriptionCopyEnabledWhileSwitchingWallpaper"));
-
-                getTile();
-
-                
-
             } else {
                 // TODO: 此应用程序已挂起，然后终止。
                 // 若要创造顺畅的用户体验，请在此处还原应用程序状态，使应用似乎永不停止运行。
             }
+
+            // popup(localStorage.getItem("isWallpaperSubmissionEnabled") + ' ' + localStorage.getItem("isDescriptionCopyEnabledWhileSwitchingWallpaper"));
+
+            getTile();
 
             if (isTodayThursday()) {
                 updateBadge("50");
@@ -39,20 +36,6 @@ var imageData = []; // 存储所有图片数据
             }
 
             getBingWallpaper();
-
-            WinJS.Utilities.query('input[name="group1"]').listen('change', function (e) {
-                var selectedStyle = document.querySelector('input[name="group1"]:checked').value;
-                localStorage.setItem("selectedStyle", selectedStyle);
-                popup('已保存 selectedStyle = ' + selectedStyle);
-            });
-
-            document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
-                if (e.target && e.target.type === 'radio') {
-                    var selectedStyle = e.target.value;
-                    localStorage.setItem("selectedStyle", selectedStyle);
-                    // popup('已保存 selectedStyle = ' + selectedStyle);
-                }
-            });
 
             //app.onsettings = function (e) {
             //    e.detail.applicationcommands = {
@@ -79,12 +62,14 @@ var imageData = []; // 存储所有图片数据
             //document.getElementById("radioButton").addEventListener("click", function () {
             //});
 
-            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
-            if (savedValue) {
-                document.querySelector('input[value="' + savedValue + '"]').checked = true;
-            } else {
-                document.querySelector('input[value="1"]').checked = true;
-            }
+            saveandRestoreSelectedStyle();
+
+            //if (isPhoneMode === false&&false) {
+            //    document.getElementById("bar-to-show-appbar").addEventListener("click", function () {
+            //        var appBar = document.getElementById("appBar").winControl;
+            //        appBar.show();
+            //    });
+            //}
 
             args.setPromise(WinJS.UI.processAll());
         }
@@ -100,6 +85,8 @@ var imageData = []; // 存储所有图片数据
 
         localStorage.setItem("isWallpaperSubmissionEnabled", isWallpaperSubmissionEnabled_CheckBox.checked);
         localStorage.setItem("isDescriptionCopyEnabledWhileSwitchingWallpaper", isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked);
+
+
 
     };
 
@@ -182,7 +169,11 @@ function setTile(type, str0, str1, str2, str3, str4) {
         var tileNotification = new Windows.UI.Notifications.TileNotification(tileTemplate1Line);
         Windows.UI.Notifications.TileUpdateManager.createTileUpdaterForApplication().update(tileNotification);
     }
+    
+    saveTile(str0, str1, str2, str3, str4);
+}
 
+function saveTile(str0, str1, str2, str3, str4) {
     // 将磁贴内容存储到 localStorage
     localStorage.setItem("currentTileText0", str0);
     localStorage.setItem("currentTileText1", str1);
@@ -199,18 +190,8 @@ function getTile() {
     document.getElementById("tileDetail4").value = localStorage.getItem("currentTileText4") || '';
 }
 
-function updateTile() {
-    const radios = document.getElementsByName('style');
-    let selectedStyle;
-
-    for (let i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-            selectedStyle = radios[i].value;
-            break;
-        }
-    }
-
-    var type = Number(selectedStyle);
+function updateTile(type) {
+    
     var detailString0 = document.getElementById("tileDetail0").value;
     var detailString1 = document.getElementById("tileDetail1").value;
     var detailString2 = document.getElementById("tileDetail2").value;
@@ -231,7 +212,11 @@ function eraseInputBox() {
 }
 
 function about() {
-    popup('Anemo TileWizard\nCopyright © 2025 BingtangXH\nSpecial Thanks to Zhilu \& Gxap\nPorting to 移植到 6.2 AppModel x & 必应壁纸相关 Bing Wallpaper related are by Li_zip\nWelcome 欢迎访问我的秘密基地 BingtangXH.moe')
+    popup('Anemo TileWizard\n' +
+'Copyright © 2025 BingtangXH\nSpecial Thanks to Zhilu \& Gxap\n' + 
+'Porting to 移植到 6.2 AppModel x & 必应壁纸相关 Bing Wallpaper related are by Li_zip\n' +
+'Call out appBar 唤出底栏 is by Angra\n' +
+'Welcome 欢迎访问我的秘密基地 BingtangXH.moe')
     // 因为手机端用不了 Flyout ，只好弄成网页提醒了
 }
 
@@ -247,35 +232,7 @@ function getBingWallpaper() {
     if (connectionProfile && connectionProfile.getNetworkConnectivityLevel() ===
         Windows.Networking.Connectivity.NetworkConnectivityLevel.internetAccess) {
         // 有网络连接，尝试获取Bing壁纸
-        
         var apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN'; // n=8 表示获取8张壁纸
-
-    // 显示进度条
-    
-    //progressRing.start();
-
-    // 发起API请求
-    //WinJS.xhr({ url: apiUrl })
-    //    .then(function (response) {
-    //        var data = JSON.parse(response.responseText);
-    //        imageData = data.images; // 获取所有壁纸数据
-            
-
-
-    //        // 遍历所有壁纸并创建图片元素
-    //        for (var i = 0; i < imageData.length; i++) {
-    //            var imageUrl = 'https://www.bing.com' + imageData[i].url;
-    //            var imageElement = document.createElement('img');
-    //            imageElement.src = imageUrl;
-    //            imageElement.alt = imageData[i].copyright;
-    //            images.push(imageElement); // 将图片元素存入数组
-    //        }
-
-    //        // 显示第一张图片
-    //        if (images.length > 0) {
-    //            images[currentWallpaperIndex].classList.add('active');
-    //        }
-    //    })
 
         // 使用传统的Promise错误处理方式
         WinJS.xhr({ url: apiUrl, timeout: 5000 }).then(
@@ -289,18 +246,23 @@ function getBingWallpaper() {
                         if (localStorage.getItem("isDescriptionCopyEnabledWhileSwitchingWallpaper") === 'true') {
                             copyDescription();
                         }
+                        document.getElementById('prev-button').disabled = false;
+                        document.getElementById('next-button').disabled = false;
+                        if (isPhoneMode === false) {
+                            document.getElementById('openinBrowser_Button').disabled = false;
+                        }
+                        return;
                     }
                 } catch (e) {
                     console.error('解析Bing数据失败:', e);
                     useLocalImage = true;
                     useLocalBackground();
-
-                    document.getElementById('prev-button').disabled = true;
-                    document.getElementById('next-button').disabled = true;
+                    popup('解析数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nAnalyzing data from Bing failed.');
                 }
             },
             function (error) { // 这是Promise的reject处理函数
                 console.error('获取Bing壁纸失败:', error);
+                popup('获取数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nGetting data from Bing failed.');
                 useLocalImage = true;
                 useLocalBackground();
             }
@@ -308,6 +270,7 @@ function getBingWallpaper() {
         
     } else {
         // 无网络连接，直接使用本地图片
+        popup('没有互联网连接，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nSeems like there is no Internet connection, obtaining wallpaper failed.');
         console.log('无网络连接，使用本地图片');
         useLocalImage = true;
         useLocalBackground();
@@ -357,36 +320,19 @@ function getBingWallpaper_old() {
     })*/;
 }
 
-// 这个函数在无网络时被调用
+// 这个函数在获取失败时被调用
 function useLocalBackground() {
     document.getElementById('background-container').style.backgroundImage =
         'url("images/PNG5231.png")';
-    document.getElementById('wallpaper-info').style.display = 'block';
-    document.getElementById('wallpaper-copyright').textContent = '无网络连接\n No Internet Connection.';
-    document.getElementById('current-wallpaper-index').textContent = '0/0';
-
-    // 禁用切换按钮
-    /*document.querySelectorAll('.wallpaper-controls button').forEach(function (btn) {
-        if (!btn.id.includes('download')) {
-            btn.disabled = true;
-        }
-    });*/
-}
-
-// 把壁纸信息显示到右下角
-function showWallpaperInfo(index) {
-    if (imageData.length > 0 && index >= 0 && index < imageData.length) {
-        var info = imageData[index];
-        var copyright = info.copyright || '未知作者';
-        var title = info.title || 'Bing每日壁纸';
-
-        // 显示信息区域
+    document.getElementById('prev-button').disabled = true;
+    document.getElementById('next-button').disabled = true;
+    if (isPhoneMode === false) {
+        document.getElementById('openinBrowser_Button').disabled = true;
         document.getElementById('wallpaper-info').style.display = 'block';
-        document.getElementById('wallpaper-copyright').textContent = copyright;
-    } else {
-        popup('imageData.length 为 0 或 index 已经超出边界');
-        return;
+        document.getElementById('wallpaper-copyright').textContent = '无网络连接\n No Internet Connection.';
+        document.getElementById('current-wallpaper-index').textContent = '0/0';
     }
+
 }
 
 // 切换背景图片
@@ -395,15 +341,17 @@ function changeBackground(index) {
         var imageUrl = 'https://www.bing.com' + imageData[index].url;
         document.getElementById('background-container').style.backgroundImage =
             'url("' + imageUrl + '")';
-        document.getElementById('current-wallpaper-index').textContent = (index + 1) + '/8';
-        showWallpaperInfo(index)
+        if (isPhoneMode === false) {
+            document.getElementById('current-wallpaper-index').textContent = (index + 1) + '/8';
+            showWallpaperInfo(index);
+        }
     } else {
         popup('imageData.length 为 0 或 index 已经超出边界');
         return;
     }
 }
 
-// 切换图片的函数
+// 切换图片的函数 （似乎用不到）
 function showImage(index) {
     if (index < 0 || index >= images.length) {
         popup('index 已经超出边界');
@@ -418,27 +366,7 @@ function showImage(index) {
     images[currentWallpaperIndex].classList.add('active');
 }
 
-// 保存图片的函数
-function openinBrowser() {
-    if (imageData.length === 0) {
-        popup('imageData.length 为 0');
-        return;
-    }
-
-    // 获取当前图片的URL
-    var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
-
-    // 创建一个隐藏的<a>标签用于触发下载
-    var link = document.createElement('a');
-    link.href = imageUrl;
-    link.download = 'bing-wallpaper-' + currentWallpaperIndex + '.jpg'; // 设置下载文件名
-    document.body.appendChild(link);
-    link.click(); // 触发下载
-    // 这行代码似乎也是手机上没用
-    document.body.removeChild(link); // 移除<a>标签
-}
-
-// 设置动态磁贴的函数
+// 设置动态磁贴的函数 （似乎用不到）
 function setTileNotification() {
     if (imageData.length === 0) {
         popup('imageData.length 为 0');
@@ -517,67 +445,10 @@ function nextWallpaper() {
 
 function copyDescription() {
     if (imageData.length === 0) {
-        popup('imageData.length 为 0');
+        // popup('imageData.length 为 0');
         return;
     }
     document.getElementById("tileDetail0").value = imageData[currentWallpaperIndex].title || '';
     document.getElementById("tileDetail1").value = imageData[currentWallpaperIndex].copyright || '';
 }
 
-function showStyleSelection() {
-    var radioFlyout = document.getElementById("radioFlyout").winControl;
-    var radioButton = document.getElementById("radioButton").winControl;
-    var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
-    radioFlyout.show(radioButton);
-}
-
-function comeoutAppBar() {
-    var appBar = document.getElementById("appBar").winControl;
-    appBar.show();
-}
-
-function showOptions() {
-    var optionsFlyout = document.getElementById("optionsFlyout").winControl;
-    var optionButton = document.getElementById("optionButton").winControl;
-    optionsFlyout.show(optionButton);
-}
-
-// 设置为锁屏背景的函数
-function submit_computer() {
-    updateTile();
-    if (isWallpaperSubmissionEnabled_CheckBox.checked) {
-        if (imageData.length === 0) {
-            popup('imageData.length 为 0');
-            return;
-        }
-
-        // 获取当前图片的URL
-        var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
-        // popup(imageUrl + '\n' + currentWallpaperIndex);
-
-        // 下载图片到本地
-        downloadImageToLocal(imageUrl)
-            .then(function (file) {
-                // 设置为锁屏背景
-                return Windows.System.UserProfile.LockScreen.setImageFileAsync(file);
-                // 这行代码对于电脑有用，手机上没用
-            })
-            .then(function () {
-                console.log('锁屏背景设置成功！');
-                //var setasLockScreenSuccessFlyout = document.getElementById("setasLockScreenSuccessFlyout").winControl;
-                //var setLockScreenButton = document.getElementById("setLockScreenButton").winControl;;
-                //setasLockScreenSuccessFlyout.show(setLockScreenButton);
-            })
-        /*.catch(function (error) {
-            console.error('设置锁屏背景失败:', error);
-        })*/;
-    }
-}
-
-function submit_phone() {
-    updateTile();
-    var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
-    if (isWallpaperSubmissionEnabled_CheckBox.checked) {
-
-    }
-}

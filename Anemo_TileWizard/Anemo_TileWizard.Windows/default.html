@@ -13,6 +13,127 @@
 
     <!-- CialloWorldJS.Windows 引用 -->
     <link href="/css/default.css" rel="stylesheet">
+    <script>
+        var isPhoneMode = false;
+
+        function setasLockScreenBackground() {
+            if (imageData.length === 0) {
+                // popup('imageData.length 为 0');
+                return;
+            }
+
+            // 获取当前图片的URL
+            var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
+            // popup(imageUrl + '\n' + currentWallpaperIndex);
+
+            // 下载图片到本地
+            downloadImageToLocal(imageUrl)
+                .then(function (file) {
+                    // 设置为锁屏背景
+                    return Windows.System.UserProfile.LockScreen.setImageFileAsync(file);
+                    // 这行代码对于电脑有用，手机上没用
+                })
+                .then(function () {
+                    console.log('锁屏背景设置成功！');
+                    //var setasLockScreenSuccessFlyout = document.getElementById("setasLockScreenSuccessFlyout").winControl;
+                    //var setLockScreenButton = document.getElementById("setLockScreenButton").winControl;;
+                    //setasLockScreenSuccessFlyout.show(setLockScreenButton);
+                })
+            /*.catch(function (error) {
+                console.error('设置锁屏背景失败:', error);
+            })*/;
+        }
+
+        function showOptions() {
+            var optionsFlyout = document.getElementById("optionsFlyout").winControl;
+            var optionButton = document.getElementById("optionButton").winControl;
+            optionsFlyout.show(optionButton);
+        }
+
+        function comeoutAppBar() {
+            var appBar = document.getElementById("appBar").winControl;
+            appBar.show();
+        }
+
+        function showStyleSelection() {
+            var radioFlyout = document.getElementById("radioFlyout").winControl;
+            var radioButton = document.getElementById("radioButton").winControl;
+            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            radioFlyout.show(radioButton);
+        }
+
+        // 保存图片的函数
+        function openinBrowser() {
+            if (imageData.length === 0) {
+                popup('imageData.length 为 0');
+                return;
+            }
+
+            // 获取当前图片的URL
+            var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
+
+            // 创建一个隐藏的<a>标签用于触发下载
+            var link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = 'bing-wallpaper-' + currentWallpaperIndex + '.jpg'; // 设置下载文件名
+            document.body.appendChild(link);
+            link.click(); // 触发下载
+            // 这行代码似乎也是手机上没用
+            document.body.removeChild(link); // 移除<a>标签
+        }
+
+        // 把壁纸信息显示到右下角
+        function showWallpaperInfo(index) {
+            if (imageData.length > 0 && index >= 0 && index < imageData.length) {
+                var info = imageData[index];
+                var copyright = info.copyright || '未知作者';
+                var title = info.title || 'Bing每日壁纸';
+
+                // 显示信息区域
+                document.getElementById('wallpaper-info').style.display = 'block';
+                document.getElementById('wallpaper-copyright').textContent = copyright;
+            } else {
+                popup('imageData.length 为 0 或 index 已经超出边界');
+                return;
+            }
+        }
+
+        function saveandRestoreSelectedStyle() {
+            document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
+                if (e.target && e.target.type === 'radio') {
+                    var selectedStyle = e.target.value;
+                    localStorage.setItem("selectedStyle", selectedStyle);
+                    // popup('已保存 selectedStyle = ' + selectedStyle);
+                }
+            });
+
+            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            if (savedValue) {
+                document.querySelector('input[value="' + savedValue + '"]').checked = true;
+            } else {
+                document.querySelector('input[value="1"]').checked = true;
+            }
+        }
+        function submit() {
+            const radios = document.getElementsByName('style');
+            let selectedStyle;
+
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selectedStyle = radios[i].value;
+                    break;
+                }
+            }
+
+            var type = Number(selectedStyle);
+
+            updateTile(type);
+            var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
+            if (isWallpaperSubmissionEnabled_CheckBox.checked) {
+                setasLockScreenBackground();
+            }
+        }
+    </script>
     <script src="/js/default.js"></script>
 </head>
 
@@ -71,9 +192,34 @@
             <p>设置完成。<br />Set as lock screen done.</p>
         </div>
 
-        <button id="come_out" class="block-right" style="width: auto;" onclick="comeoutAppBar();">唤出 Bar</button>
+        <!--<button id="come_out" class="block-right" style="width: auto;" onclick="comeoutAppBar();">唤出 Bar（将被移除）</button>-->
 
-        <div id="appBar" data-win-control="WinJS.UI.AppBar">
+        <div class="win-bottomlayout" id="bar-to-show-appbar" onclick="comeoutAppBar();"><span>•••</span></div>
+
+        <style>
+        .win-bottomlayout {
+            height: 15px;
+            background-color: teal; /* 可以设置成其他值，设置半透明也可。主要是为了区分能识别出这个位置有个 Bar */
+            position: absolute;
+            bottom: 0px;
+            top: auto;
+            left: 0px;
+            right: 0px;
+            text-align: center;
+            overflow: hidden;
+            display: -ms-flexbox;   /* IE Flex容器 */
+            -ms-flex-pack: center;  /* 主轴居中 */
+        }
+        .win-bottomlayout > span {
+        position: absolute;
+        right: 56px;
+        left: auto;
+        color: white;
+        top: -2px;
+        }
+        </style>
+
+        <div id="appBar" data-win-control="WinJS.UI.AppBar" style="background-color:teal;">
             <!-- 添加按钮 -->
             <button data-win-control="WinJS.UI.AppBarCommand"
                     data-win-options="{label:'滚回', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态'}"
@@ -84,12 +230,12 @@
             <button data-win-control="WinJS.UI.AppBarCommand"
                     data-win-options="{label:'关于', icon:'emoji2', section:'global', tooltip:'关于本程序'}"
                     onclick="about()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand"
+            <button data-win-control="WinJS.UI.AppBarCommand" id="openinBrowser_Button"
                     data-win-options="{label:'浏览器打开', icon:'&#xE114;', section:'global'}"
                     onclick="openinBrowser()"></button>
             <button data-win-control="WinJS.UI.AppBarCommand"
                     data-win-options="{label:'提交', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
-                    onclick="submit_computer()"></button>
+                    onclick="submit()"></button>
 
             <button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"
                     data-win-options="{label:'排版', icon:'list', section:'selection', tooltip:'选择文字磁贴的排版'}"

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="BingtangXH.Anemo-TileWizard" Version="1.1.6.42" Publisher="CN=ninei" />
+  <Identity Name="BingtangXH.Anemo-TileWizard" Version="1.2.0.45" Publisher="CN=ninei" />
   <Properties>
     <DisplayName>Anemo-TileWizard.Windows</DisplayName>
     <PublisherDisplayName>BingtangXH</PublisherDisplayName>

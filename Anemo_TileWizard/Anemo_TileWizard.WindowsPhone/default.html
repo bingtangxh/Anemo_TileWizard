@@ -14,6 +14,70 @@
 
     <!-- CialloWorldJS.Phone 引用 -->
     <link href="/css/default.css" rel="stylesheet" />
+    <script>
+        var isPhoneMode = true;
+        function setasLockScreenBackground() {
+            return;
+        }
+        function saveandRestoreSelectedStyle_old() {
+            document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
+                if (e.target && e.target.type === 'radio') {
+                    var selectedStyle = e.target.value;
+                    localStorage.setItem("selectedStyle", selectedStyle);
+                    // popup('已保存 selectedStyle = ' + selectedStyle);
+                }
+            });
+
+            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            if (savedValue) {
+                document.querySelector('input[value="' + savedValue + '"]').checked = true;
+            } else {
+                document.querySelector('input[value="1"]').checked = true;
+            }
+        }
+        function saveandRestoreSelectedStyle() {
+            // 获取下拉菜单元素
+            var styleSelect = document.querySelector('#radioFlyout form select[name="style"]');
+
+            // 监听下拉菜单的变化事件
+            styleSelect.addEventListener('change', function (e) {
+                var selectedStyle = e.target.value;
+                localStorage.setItem("selectedStyle", selectedStyle);
+                // popup('已保存 selectedStyle = ' + selectedStyle);
+            });
+
+            // 从本地存储读取保存的值并设置下拉菜单
+            var savedValue = localStorage.getItem("selectedStyle");
+            if (savedValue) {
+                styleSelect.value = savedValue;
+            } else {
+                styleSelect.value = "1"; // 默认值
+            }
+        }
+        function submit() {
+            let selectedStyle;
+
+            selectedStyle = document.querySelector('select[name="style"]').value;
+
+            var type = Number(selectedStyle);
+
+            updateTile(type);
+            var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
+            if (isWallpaperSubmissionEnabled_CheckBox.checked) {
+                setasLockScreenBackground();
+            }
+        }
+        function openinBrowser() {
+            if (imageData.length === 0) {
+                popup('imageData.length 为 0');
+                return;
+            }
+
+            // 获取当前图片的URL
+            var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
+            window.location.href = imageUrl;
+        }
+    </script>
     <script src="/js/default.js"></script>
 </head>
 <body class="phone" style="overflow:auto">
@@ -26,7 +90,7 @@
 
             
 
-            <h1 class="text-center">Anemo TileWizard <span style="color:red">(Pre-Release)</span></h1>
+            <h1 class="text-center">Anemo TileWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
             <p>
                 锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
                 Set the details on lock screen (Length limits may apply)
@@ -60,7 +124,7 @@
             </fieldset>
 
             <div id="radioFlyout">
-                <form>
+                <!--<form>
                     <fieldset style="width:auto; float:left;">
                         <legend>选择磁贴文字排版</legend>
                         <div>
@@ -85,6 +149,20 @@
 
                         </div>
                     </fieldset>
+                </form>-->
+                <form>
+                    <fieldset style="width:auto; float:left;">
+                        <legend>选择磁贴文字排版</legend>
+                        <div>
+                            <select id="styleSelect" name="style">
+                                <option value="1" selected>1L4S （第一行作为标题）</option>
+                                <option value="5">0L5S （每行都是小字）</option>
+                                <option value="9">1L1S （第一行作为标题）</option>
+                                <option value="3">1L0S （大字）</option>
+                                <option value="4">0L1S （小字）</option>
+                            </select>
+                        </div>
+                    </fieldset>
                 </form>
             </div>
             
@@ -105,12 +183,12 @@
                 <button data-win-control="WinJS.UI.AppBarCommand" id="prev-button"
                         data-win-options="{label:'Prev', icon:'left', section:'global', tooltip:'上一张壁纸'}"
                         onclick="prevWallpaper()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand"
+                        data-win-options="{label:'Submit', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
+                        onclick="submit()"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" id="next-button"
                         data-win-options="{label:'Next', icon:'right', section:'global', tooltip:'下一张壁纸'}"
                         onclick="nextWallpaper()"></button>
-                <button data-win-control="WinJS.UI.AppBarCommand"
-                        data-win-options="{label:'Submit', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
-                        onclick="submit_phone()"></button>
 
                 <!--<button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"
                         data-win-options="{label:'排版', icon:'list', section:'selection', tooltip:'选择文字磁贴的排版'}"
@@ -120,14 +198,6 @@
                         onclick="showOptions()"></button>-->
             </div>
 
-            <div style="position:fixed;bottom:77px;right:20px;background:rgba(0,0,0,0.7);padding:10px;border-radius:5px;display:none;">
-                <p style="margin:0 0 10px 0;color:white;">当前壁纸 Current:<span id="current-wallpaper-index"></span></p>
-            </div>
-
-            <div id="wallpaper-info" style="position:fixed;bottom:20px;right:20px;max-width:50%;background:rgba(0,0,0,0);color:white;padding:10px;border-radius:5px;">
-                <!-- 这里设置 display:none 似乎不起作用，我只好把可见度 Alpha 设置为 0 了。 -->
-                <p id="wallpaper-copyright" style="margin:0;font-size:14px;display:none;"></p>
-            </div>
             <!-- 切换按钮
             <button id="prev-button" class="nav-button" disabled onclick="prev_wp()">←</button>
             <button id="next-button" class="nav-button" disabled onclick="next_wp()">→</button> -->

@@ -16,25 +16,25 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>1663E7D08507BA3EB947983A6C538B4064987506CE04391E3B4B0854F84082A0</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>BingtangXH.Anemo-TileWizard_1.1.6.42_neutral__j9gfswm1v8pve</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>FA187D349DCC7594F11D17F2BE979357003EE805F646CDBB9DAF05086D34F1AB</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>BingtangXH.Anemo-TileWizard_1.2.0.45_neutral__j9gfswm1v8pve</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>BingtangXH.Anemo-TileWizard_j9gfswm1v8pve!App</RegisteredUserModeAppID>
     <RegisteredPackageID>BingtangXH.Anemo-TileWizard</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=ninei</RegisteredPackagePublisher>
-    <RegisteredVersion>1.1.6.42</RegisteredVersion>
+    <RegisteredVersion>1.2.0.45</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-20T03:54:56.105</Modified>
+      <Modified>2025-04-21T07:21:30.417</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2025-04-20T03:53:47.951</Modified>
+      <Modified>2025-04-21T07:21:01.495</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-100.png">
       <PackagePath>images\BadgeLogo.scale-100.png</PackagePath>
@@ -201,12 +201,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2025-04-20T04:14:57.911</Modified>
+      <Modified>2025-04-21T07:11:02.705</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-04-20T03:54:55.922</Modified>
+      <Modified>2025-04-21T07:21:30.335</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
