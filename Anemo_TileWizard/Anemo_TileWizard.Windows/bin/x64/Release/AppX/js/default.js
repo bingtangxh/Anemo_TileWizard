@@ -35,8 +35,6 @@ var imageData = []; // 存储所有图片数据
                 updateBadge("0");
             }
 
-            getBingWallpaper();
-
             //app.onsettings = function (e) {
             //    e.detail.applicationcommands = {
             //        "options": { href: "/options.html", title: "选项 Options" }
@@ -46,21 +44,25 @@ var imageData = []; // 存储所有图片数据
 
             var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
             var isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox = document.getElementById("isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox");
+            var useEnglishDescription_CheckBox = document.getElementById("useEnglishDescription_CheckBox");
 
             isWallpaperSubmissionEnabled_CheckBox.checked = localStorage.getItem("isWallpaperSubmissionEnabled") === 'true';
-
             isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked = localStorage.getItem("isDescriptionCopyEnabledWhileSwitchingWallpaper") === 'true';
+            useEnglishDescription_CheckBox.checked = localStorage.getItem("useEnglishDescription") === 'true';
 
             isWallpaperSubmissionEnabled_CheckBox.addEventListener("change", function (e) {
                 localStorage.setItem("isWallpaperSubmissionEnabled", isWallpaperSubmissionEnabled_CheckBox.checked);
             });
-
             isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.addEventListener("change", function (e) {
                 localStorage.setItem("isDescriptionCopyEnabledWhileSwitchingWallpaper", isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked);
             });
-
+            useEnglishDescription_CheckBox.addEventListener("change", function (e) {
+                localStorage.setItem("useEnglishDescription", useEnglishDescription_CheckBox.checked);
+            });
             //document.getElementById("radioButton").addEventListener("click", function () {
             //});
+
+            getBingWallpaper();
 
             saveandRestoreSelectedStyle();
 
@@ -85,6 +87,7 @@ var imageData = []; // 存储所有图片数据
 
         localStorage.setItem("isWallpaperSubmissionEnabled", isWallpaperSubmissionEnabled_CheckBox.checked);
         localStorage.setItem("isDescriptionCopyEnabledWhileSwitchingWallpaper", isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked);
+        localStorage.setItem("useEnglishDescription", useEnglishDescription_CheckBox.checked);
 
 
 
@@ -232,8 +235,13 @@ function getBingWallpaper() {
     if (connectionProfile && connectionProfile.getNetworkConnectivityLevel() ===
         Windows.Networking.Connectivity.NetworkConnectivityLevel.internetAccess) {
         // 有网络连接，尝试获取Bing壁纸
-        var apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN'; // n=8 表示获取8张壁纸
-
+        var useEnglishDescription_CheckBox = document.getElementById("useEnglishDescription_CheckBox");
+        var apiUrl;
+        if (useEnglishDescription_CheckBox.checked) {
+            apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=en-US'; // n=8 表示获取8张壁纸
+        } else {
+            apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN'; // n=8 表示获取8张壁纸
+        }
         // 使用传统的Promise错误处理方式
         WinJS.xhr({ url: apiUrl, timeout: 5000 }).then(
             function (response) {
@@ -241,6 +249,7 @@ function getBingWallpaper() {
                     var data = JSON.parse(response.responseText);
                     if (data.images && data.images.length > 0) {
                         imageData = data.images;
+                        // popup(data.images[1].url + '\n' + apiUrl);
                         useLocalImage = false;
                         changeBackground(currentWallpaperIndex);
                         if (localStorage.getItem("isDescriptionCopyEnabledWhileSwitchingWallpaper") === 'true') {
@@ -278,8 +287,13 @@ function getBingWallpaper() {
 }
 
 function getBingWallpaper_old() {
-    var apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN'; // n=8 表示获取8张壁纸
-
+    var useEnglishDescription_CheckBox = document.getElementById("useEnglishDescription_CheckBox");
+    var apiUrl;
+    if (useEnglishDescription_CheckBox.checked) {
+        apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=en-US'; // n=8 表示获取8张壁纸
+    } else {
+        apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN'; // n=8 表示获取8张壁纸
+    }
     // 显示进度条
     var progressRing = document.querySelector('.progress-ring').winControl;
     //progressRing.start();
@@ -419,8 +433,8 @@ function downloadImageToLocal(imageUrl) {
         });
 }
 
-// 上一张壁纸
-function prevWallpaper() {
+// 明天的壁纸
+function nextWallpaper() {
     currentWallpaperIndex = (currentWallpaperIndex - 1 + imageData.length) % imageData.length;
     changeBackground(currentWallpaperIndex);
     var isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox = document.getElementById("isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox");
@@ -431,8 +445,8 @@ function prevWallpaper() {
     }
 }
 
-// 下一张壁纸
-function nextWallpaper() {
+// 昨天的壁纸
+function prevWallpaper() {
     currentWallpaperIndex = (currentWallpaperIndex + 1) % imageData.length;
     changeBackground(currentWallpaperIndex);
     var isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox = document.getElementById("isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox");

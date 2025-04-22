@@ -1,1 +1,1 @@
-C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.WindowsPhone\Anemo_TileWizard.WindowsPhone.jsproj;neutral
+D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.WindowsPhone\Anemo_TileWizard.WindowsPhone.jsproj;neutral
