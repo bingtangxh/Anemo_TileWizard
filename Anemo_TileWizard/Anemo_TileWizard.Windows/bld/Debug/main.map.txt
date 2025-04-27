@@ -1,7 +1,0 @@
-[ResourceMetadata]
-"ResourceDimensions"		"scale-100"
-"ResourceDimensions"		"language-zh-hans-cn"
-"ResourceDimensions"		"language-zh-CN"
-
-[Files]
-"C:\Users\ninei\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Debug\split.pri"			"resources.pri"

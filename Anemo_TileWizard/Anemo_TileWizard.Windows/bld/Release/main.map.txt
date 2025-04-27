@@ -1,8 +1,0 @@
-[ResourceMetadata]
-"ResourceDimensions"		"scale-100"
-"ResourceDimensions"		"language-zh-hans-cn"
-"ResourceDimensions"		"language-zh-CN"
-
-[Files]
-"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\split.pri"			"resources.pri"
-"D:\OneDrive\文档\Visual Studio Projects\CialloWorldJS\CialloWorldJS.Windows\bld\Release\PackageLayout\js\default.js"			"js\default.js"
