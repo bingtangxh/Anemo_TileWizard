@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="BingtangXH.Anemo-TileWizard.Phone" Version="1.1.2.11" Publisher="CN=ninei" />
+  <Identity Name="BingtangXH.Anemo-TileWizard.Phone" Version="1.1.2.11" 
+  Publisher="CN=ninei" />
   <mp:PhoneIdentity PhoneProductId="87325d0f-447c-4b47-a80e-a4bd6d43983a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Anemo-TileWizard.WindowsPhone</DisplayName>

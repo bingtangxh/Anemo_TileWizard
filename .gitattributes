@@ -1,4 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-Anemo_TileWizard/Anemo_TileWizard.Windows/package.appxmanifest filter=ignoreline3
-Anemo_TileWizard/Anemo_TileWizard.WindowsPhone/package.appxmanifest filter=ignoreline3
+Anemo_TileWizard/Anemo_TileWizard.Windows/package.appxmanifest filter=ignoreline4
+Anemo_TileWizard/Anemo_TileWizard.WindowsPhone/package.appxmanifest filter=ignoreline4
