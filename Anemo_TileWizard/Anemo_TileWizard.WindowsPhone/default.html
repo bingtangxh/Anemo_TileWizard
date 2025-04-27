@@ -95,14 +95,14 @@
                 锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
                 Set the details on lock screen (Length limits may apply)
             </p>
-            <textarea id="tileDetail0" placeholder="标题" maxlength="254"></textarea>
-            <textarea id="tileDetail1" placeholder="段落 1" maxlength="254"></textarea>
-            <textarea id="tileDetail2" placeholder="段落 2" maxlength="254"></textarea>
-            <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）" maxlength="254"></textarea>
-            <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）" maxlength="254"></textarea>
+            <textarea id="tileDetail0" placeholder="标题&#10;Title" maxlength="254"></textarea>
+            <textarea id="tileDetail1" placeholder="段落 1&#10;Sentence 1" maxlength="254"></textarea>
+            <textarea id="tileDetail2" placeholder="段落 2&#10;Sentence 2" maxlength="254"></textarea>
+            <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）&#10;Sentence 3 (Won't show on lock screen in Windows 10/11 or Windows Phone 8.1)" maxlength="254"></textarea>
+            <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）&#10;Sentence 4 (Only show on lock screen in Windows 8.1 or live tile of Windows 10 Mobile or Tablet mode)" maxlength="254"></textarea>
             
             <fieldset style="width:auto; float:left;">
-                <legend>选项</legend>
+                <legend>选项 Options</legend>
                 <div>
                     <label class="win-switch">
                         <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox" disabled>
@@ -116,6 +116,15 @@
                     <label class="win-switch">
                         <input type="checkbox" class="win-switch-input" id="isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox">
                         <span class="win-switch-content">切换壁纸时一并复制描述<br>Copy description to inputbox while changing wallpaper</span>
+                        <span class="win-switch-track">
+                            <span class="win-switch-thumb"></span>
+                        </span>
+                    </label>
+                </div>
+                <div>
+                    <label class="win-switch">
+                        <input type="checkbox" class="win-switch-input" id="useEnglishDescription_CheckBox" disabled>
+                        <span class="win-switch-content">不获取中文描述而是获取英文的（尚未实现）<br>Obtain English description of wallpaper instead of Chinese (not available yet)</span>
                         <span class="win-switch-track">
                             <span class="win-switch-thumb"></span>
                         </span>
@@ -152,7 +161,7 @@
                 </form>-->
                 <form>
                     <fieldset style="width:auto; float:left;">
-                        <legend>选择磁贴文字排版</legend>
+                        <legend>选择磁贴文字排版 Choice a tile style</legend>
                         <div>
                             <select id="styleSelect" name="style">
                                 <option value="1" selected>1L4S （第一行作为标题）</option>
@@ -181,13 +190,13 @@
                         data-win-options="{label:'浏览器打开 Open in Browser', icon:'&#xE114;', section:'selection'}"
                         onclick="openinBrowser()"></button>-->
                 <button data-win-control="WinJS.UI.AppBarCommand" id="prev-button"
-                        data-win-options="{label:'Prev', icon:'left', section:'global', tooltip:'上一张壁纸'}"
+                        data-win-options="{label:'昨天 Yday', icon:'left', section:'global', tooltip:'上一张壁纸'}"
                         onclick="prevWallpaper()"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand"
-                        data-win-options="{label:'Submit', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
+                        data-win-options="{label:'提交 Sbmt.', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
                         onclick="submit()"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" id="next-button"
-                        data-win-options="{label:'Next', icon:'right', section:'global', tooltip:'下一张壁纸'}"
+                        data-win-options="{label:'明天 Tmrw', icon:'right', section:'global', tooltip:'下一张壁纸'}"
                         onclick="nextWallpaper()"></button>
 
                 <!--<button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"

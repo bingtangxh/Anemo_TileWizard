@@ -154,15 +154,15 @@
         <p>锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
         Set the details on lock screen (Length limits may apply)
         </p>
-        <textarea id="tileDetail0" placeholder="标题" maxlength="254"></textarea>
-        <textarea id="tileDetail1" placeholder="段落 1" maxlength="254"></textarea>
-        <textarea id="tileDetail2" placeholder="段落 2" maxlength="254"></textarea>
-        <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）" maxlength="254"></textarea>
-        <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）" maxlength="254"></textarea>
+        <textarea id="tileDetail0" placeholder="标题&#10;Title" maxlength="254"></textarea>
+        <textarea id="tileDetail1" placeholder="段落 1&#10;Sentence 1" maxlength="254"></textarea>
+        <textarea id="tileDetail2" placeholder="段落 2&#10;Sentence 2" maxlength="254"></textarea>
+        <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）&#10;Sentence 3 (Won't show on lock screen in Windows 10/11 or Windows Phone 8.1)" maxlength="254"></textarea>
+        <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）&#10;Sentence 4 (Only show on lock screen in Windows 8.1 or live tile of Windows 10 Mobile or Tablet mode)" maxlength="254"></textarea>
         <div id="radioFlyout" data-win-control="WinJS.UI.Flyout">
             <form>
                 <fieldset style="width:280px; float:left;">
-                    <legend>选择磁贴文字排版</legend>
+                    <legend>选择磁贴文字排版 Choice a tile style</legend>
                     <div>
                         <input type="radio"
                                id="styleChoice1"
@@ -223,33 +223,33 @@
         <div id="appBar" data-win-control="WinJS.UI.AppBar" style="background-color:teal;">
             <!-- 添加按钮 -->
             <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{label:'滚回', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态'}"
+                    data-win-options="{label:'滚回 Rbk.', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态 Copy the strings last saved to inputboxes'}"
                     onclick="getTile()"></button>
             <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{label:'清空', icon:'&#xE106;', section:'global', tooltip:'让文本框的内容都变成空的'}"
+                    data-win-options="{label:'清空 Clr.', icon:'&#xE106;', section:'global', tooltip:'让文本框的内容都变成空的 Erase all the inputboxes'}"
                     onclick="eraseInputBox()"></button>
             <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{label:'关于', icon:'emoji2', section:'global', tooltip:'关于本程序'}"
+                    data-win-options="{label:'关于 About', icon:'emoji2', section:'global', tooltip:'关于本程序 About this program'}"
                     onclick="about()"></button>
             <button data-win-control="WinJS.UI.AppBarCommand" id="openinBrowser_Button"
-                    data-win-options="{label:'浏览器打开', icon:'&#xE114;', section:'global'}"
+                    data-win-options="{label:'浏览器打开 Open Brws.', icon:'&#xE114;', section:'global', tooltip:'在浏览器打开壁纸 Open the wallpaper in Browser'}"
                     onclick="openinBrowser()"></button>
             <button data-win-control="WinJS.UI.AppBarCommand"
-                    data-win-options="{label:'提交', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
+                    data-win-options="{label:'提交 Sbmt.', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容 Submit'}"
                     onclick="submit()"></button>
 
             <button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"
-                    data-win-options="{label:'排版', icon:'list', section:'selection', tooltip:'选择文字磁贴的排版'}"
+                    data-win-options="{label:'排版 Style', icon:'list', section:'selection', tooltip:'选择文字磁贴的排版 Choice a tile type'}"
                     onclick="showStyleSelection()"
                     ></button>
             <button data-win-control="WinJS.UI.AppBarCommand" id="optionButton"
-                    data-win-options="{label:'选项', icon:'settings', section:'selection', tooltip:'设置锁屏背景相关选项'}"
+                    data-win-options="{label:'选项 Opt.', icon:'settings', section:'selection', tooltip:'设置锁屏背景相关选项 Set if you need to submit with the wallpaper to lock screen'}"
                     onclick="showOptions()"></button>
         </div>
 
         <div id="optionsFlyout" data-win-control="WinJS.UI.Flyout">
             <fieldset style="width:420px; float:left;">
-                <legend>选项</legend>
+                <legend>选项 Options</legend>
                 <!--<div id="isWallpaperSubmissionEnabled" data-win-control="WinJS.UI.ToggleSwitch"
                  data-win-options="{title: '提交时一并设置锁屏壁纸', checked: true}">
             </div>
@@ -277,6 +277,15 @@
                     </label>
                 </div>
 
+                <div>
+                    <label class="win-switch">
+                        <input type="checkbox" class="win-switch-input" id="useEnglishDescription_CheckBox" disabled>
+                        <span class="win-switch-content">不获取中文描述而是获取英文的（尚未实现）<br>Obtain English description of wallpaper instead of Chinese (not available yet)</span>
+                        <span class="win-switch-track">
+                            <span class="win-switch-thumb"></span>
+                        </span>
+                    </label>
+                </div>
             </fieldset>
         </div>
 

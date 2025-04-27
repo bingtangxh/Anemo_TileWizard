@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>DKR-GALPALYER3</Machine>
-    <WindowsUser>Weslie</WindowsUser>
+    <Machine>DKR-PC-W11</Machine>
+    <WindowsUser>ninei</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetOsVersion>6.3</TargetOsVersion>
     <TargetOsDescription>Windows 8.1</TargetOsDescription>
@@ -10,155 +10,155 @@
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>BingtangXH.Anemo-TileWizard</PackageIdentityName>
     <PackageIdentityPublisher>CN=ninei</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bld\Release\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\AppxManifest.xml">
+    <AppXManifest Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\default.html">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\default.html">
       <PackagePath>default.html</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-100.png">
       <PackagePath>images\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-140.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-140.png">
       <PackagePath>images\BadgeLogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-180.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\BadgeLogo.scale-180.png">
       <PackagePath>images\BadgeLogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-100.png">
       <PackagePath>images\logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-140.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-140.png">
       <PackagePath>images\logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-180.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-180.png">
       <PackagePath>images\logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-80.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\logo.scale-80.png">
       <PackagePath>images\logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-100.png">
       <PackagePath>images\smalllogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-140.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-140.png">
       <PackagePath>images\smalllogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-180.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-180.png">
       <PackagePath>images\smalllogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-80.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.scale-80.png">
       <PackagePath>images\smalllogo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-16.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-16.png">
       <PackagePath>images\smalllogo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-256.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-256.png">
       <PackagePath>images\smalllogo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-32.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-32.png">
       <PackagePath>images\smalllogo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-48.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\smalllogo.targetsize-48.png">
       <PackagePath>images\smalllogo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-100.png">
       <PackagePath>images\splashscreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-140.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-140.png">
       <PackagePath>images\splashscreen.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-180.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\splashscreen.scale-180.png">
       <PackagePath>images\splashscreen.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-100.png">
       <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-80.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square310x310Logo.scale-80.png">
       <PackagePath>images\Square310x310Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-100.png">
       <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-140.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-140.png">
       <PackagePath>images\Square70x70Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-180.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-180.png">
       <PackagePath>images\Square70x70Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-80.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Square70x70Logo.scale-80.png">
       <PackagePath>images\Square70x70Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-100.png">
       <PackagePath>images\storelogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-140.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-140.png">
       <PackagePath>images\storelogo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-180.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\storelogo.scale-180.png">
       <PackagePath>images\storelogo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-100.png">
       <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-140.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-140.png">
       <PackagePath>images\Wide310x150Logo.scale-140.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-180.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-180.png">
       <PackagePath>images\Wide310x150Logo.scale-180.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-80.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\images\Wide310x150Logo.scale-80.png">
       <PackagePath>images\Wide310x150Logo.scale-80.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\images\PNG5231.png">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\images\PNG5231.png">
       <PackagePath>images\PNG5231.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\css\default.css">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\css\default.css">
       <PackagePath>css\default.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\js\default.js">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\js\default.js">
       <PackagePath>js\default.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\resources.pri">
+    <AppxPackagedFile Include="D:\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\bin\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>

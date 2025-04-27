@@ -1,1 +1,1 @@
-C:\AppPackages\Anemo_TileWizard.Windows_1.2.0.46_AnyCPU_Test\Anemo_TileWizard.Windows_1.2.0.46_AnyCPU.appx
+C:\AppPackages\Anemo_TileWizard.Windows_1.2.2.47_AnyCPU_Test\Anemo_TileWizard.Windows_1.2.2.47_AnyCPU.appx
