@@ -356,7 +356,7 @@ function changeBackground(index) {
         document.getElementById('background-container').style.backgroundImage =
             'url("' + imageUrl + '")';
         if (isPhoneMode === false) {
-            document.getElementById('current-wallpaper-index').textContent = (index + 1) + '/8';
+            document.getElementById('current-wallpaper-index').textContent = (imageData.length - index) + '/' + imageData.length;
             showWallpaperInfo(index);
         }
     } else {
