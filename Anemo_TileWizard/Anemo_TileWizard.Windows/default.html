@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anemo Wizard</title>
+    <title>Anemo LockWizard</title>
 
     <!-- WinJS 引用 -->
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet">
@@ -59,7 +59,7 @@
         function showStyleSelection() {
             var radioFlyout = document.getElementById("radioFlyout").winControl;
             var radioButton = document.getElementById("radioButton").winControl;
-            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
             radioFlyout.show(radioButton);
         }
 
@@ -103,12 +103,14 @@
             document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
                 if (e.target && e.target.type === 'radio') {
                     var selectedStyle = e.target.value;
-                    localStorage.setItem("selectedStyle", selectedStyle);
+                    // localStorage.setItem("selectedStyle", selectedStyle);
+                    Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"] = selectedStyle;
                     // popup('已保存 selectedStyle = ' + selectedStyle);
                 }
             });
 
-            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            // var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
             if (savedValue) {
                 document.querySelector('input[value="' + savedValue + '"]').checked = true;
             } else {
@@ -150,7 +152,7 @@
              ">
         </div>
 
-        <h1 class="text-center">Anemo TileWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
+        <h1 class="text-center">Anemo LockWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
         <p>锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
         Set the details on lock screen (Length limits may apply)
         </p>
@@ -277,7 +279,7 @@
                     </label>
                 </div>
 
-                <div>
+                <!--<div>
                     <label class="win-switch">
                         <input type="checkbox" class="win-switch-input" id="useEnglishDescription_CheckBox">
                         <span class="win-switch-content">不获取中文描述而是获取英文的（尚未实现）<br>Obtain English description of wallpaper instead of Chinese (not available yet)</span>
@@ -285,7 +287,7 @@
                             <span class="win-switch-thumb"></span>
                         </span>
                     </label>
-                </div>
+                </div>-->
             </fieldset>
         </div>
 
@@ -301,3 +303,4 @@
 </main>
 </body>
 </html>
+

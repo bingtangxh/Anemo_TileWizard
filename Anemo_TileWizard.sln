@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Anemo_TileWizard", "Anemo_TileWizard", "{B2D96EB0-83B9-4831-AAA5-BCA8CF1B8114}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Anemo_LockWizard", "Anemo_LockWizard", "{B2D96EB0-83B9-4831-AAA5-BCA8CF1B8114}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Anemo_TileWizard.Shared", "..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.shproj", "{A7D771A9-9D69-4849-9F7D-379C291E1BF5}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Anemo_LockWizard.Shared", "Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_LockWizard.Shared.shproj", "{A7D771A9-9D69-4849-9F7D-379C291E1BF5}"
 EndProject
-Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Anemo_TileWizard.Windows", "..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Windows\Anemo_TileWizard.Windows.jsproj", "{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}"
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Anemo_LockWizard.Windows", "Anemo_TileWizard\Anemo_TileWizard.Windows\Anemo_LockWizard.Windows.jsproj", "{579E77A5-956F-45F1-9C7D-AFEB45F9A2DB}"
 EndProject
-Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Anemo_TileWizard.WindowsPhone", "..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.WindowsPhone\Anemo_TileWizard.WindowsPhone.jsproj", "{F2B8BDC6-0373-4AD1-87C3-0313944909C7}"
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Anemo_LockWizard.WindowsPhone", "Anemo_TileWizard\Anemo_TileWizard.WindowsPhone\Anemo_LockWizard.WindowsPhone.jsproj", "{F2B8BDC6-0373-4AD1-87C3-0313944909C7}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.projitems*{579e77a5-956f-45f1-9c7d-afeb45f9a2db}*SharedItemsImports = 5
-		..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.projitems*{a7d771a9-9d69-4849-9f7d-379c291e1bf5}*SharedItemsImports = 13
-		..\..\GitHub\Anemo_TileWizard\Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_TileWizard.Shared.projitems*{f2b8bdc6-0373-4ad1-87c3-0313944909c7}*SharedItemsImports = 5
+		Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_LockWizard.Shared.projitems*{579e77a5-956f-45f1-9c7d-afeb45f9a2db}*SharedItemsImports = 5
+		Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_LockWizard.Shared.projitems*{a7d771a9-9d69-4849-9f7d-379c291e1bf5}*SharedItemsImports = 13
+		Anemo_TileWizard\Anemo_TileWizard.Shared\Anemo_LockWizard.Shared.projitems*{f2b8bdc6-0373-4ad1-87c3-0313944909c7}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

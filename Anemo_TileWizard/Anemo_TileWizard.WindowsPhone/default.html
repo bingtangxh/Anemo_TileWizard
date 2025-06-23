@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <title>Anemo TileWizard</title>
+    <title>Anemo LockWizard</title>
 
     <!-- WinJS 引用 -->
     <!-- 在运行时，ui-themed.css 基于用户的主题设置解析为 ui-themed.theme-light.css
@@ -23,12 +23,12 @@
             document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
                 if (e.target && e.target.type === 'radio') {
                     var selectedStyle = e.target.value;
-                    localStorage.setItem("selectedStyle", selectedStyle);
+                    Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"] = selectedStyle;
                     // popup('已保存 selectedStyle = ' + selectedStyle);
                 }
             });
 
-            var savedValue = localStorage.getItem("selectedStyle"); // WinJS.Application.localSettings.values["selectedOption"];
+            var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"]; // WinJS.Application.localSettings.values["selectedOption"];
             if (savedValue) {
                 document.querySelector('input[value="' + savedValue + '"]').checked = true;
             } else {
@@ -42,12 +42,12 @@
             // 监听下拉菜单的变化事件
             styleSelect.addEventListener('change', function (e) {
                 var selectedStyle = e.target.value;
-                localStorage.setItem("selectedStyle", selectedStyle);
+                Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"] = selectedStyle;
                 // popup('已保存 selectedStyle = ' + selectedStyle);
             });
 
             // 从本地存储读取保存的值并设置下拉菜单
-            var savedValue = localStorage.getItem("selectedStyle");
+            var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
             if (savedValue) {
                 styleSelect.value = savedValue;
             } else {
@@ -90,7 +90,7 @@
 
             
 
-            <h1 class="text-center">Anemo TileWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
+            <h1 class="text-center">Anemo LockWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
             <p>
                 锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
                 Set the details on lock screen (Length limits may apply)
@@ -121,15 +121,15 @@
                         </span>
                     </label>
                 </div>
-                <div>
+                <!--<div>
                     <label class="win-switch">
-                        <input type="checkbox" class="win-switch-input" id="useEnglishDescription_CheckBox" disabled>
+                        <input type="checkbox" class="win-switch-input" id="useEnglishDescription_CheckBox">
                         <span class="win-switch-content">不获取中文描述而是获取英文的（尚未实现）<br>Obtain English description of wallpaper instead of Chinese (not available yet)</span>
                         <span class="win-switch-track">
                             <span class="win-switch-thumb"></span>
                         </span>
                     </label>
-                </div>
+                </div>-->
             </fieldset>
 
             <div id="radioFlyout">
