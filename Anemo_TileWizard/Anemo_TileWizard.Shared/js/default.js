@@ -160,8 +160,7 @@ var imageData = []; // 存储所有图片数据
                 taskShape += "后台任务似乎从未触发！\n";
             }
 
-            // popup(taskShape);
-            // 
+            displayShape(taskShape);
 
             //if (isPhoneMode === false&&false) {
             //    document.getElementById("bar-to-show-appbar").addEventListener("click", function () {
@@ -376,12 +375,12 @@ function getBingWallpaper() {
                     console.error('解析Bing数据失败:', e);
                     useLocalImage = true;
                     useLocalBackground();
-                    popup('解析数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nAnalyzing data from Bing failed.');
+                    displayError('解析数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nAnalyzing data from Bing failed.');
                 }
             },
             function (error) { // 这是Promise的reject处理函数
                 console.error('获取Bing壁纸失败:', error);
-                popup('获取数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。看看是不是系统时间不准。\nGetting data from Bing failed. May be it is due to too wrong system date & time.');
+                displayError('获取数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。看看是不是系统时间不准。\nGetting data from Bing failed. May be it is due to too wrong system date & time.');
                 useLocalImage = true;
                 useLocalBackground();
             }
@@ -389,7 +388,7 @@ function getBingWallpaper() {
         
     } else {
         // 无网络连接，直接使用本地图片
-        popup('没有互联网连接，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nSeems like there is no Internet connection, obtaining wallpaper failed.');
+        displayError('没有互联网连接，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nSeems like there is no Internet connection, obtaining wallpaper failed.');
         console.log('无网络连接，使用本地图片');
         useLocalImage = true;
         useLocalBackground();
@@ -620,3 +619,16 @@ function checkTileUpdateTaskRegistered() {
     return taskShape;
 }
 
+function displayError(str) {
+    const errors=document.getElementById("errors");
+    errors.textContent += str;
+    errors.textContent += '\n';
+}
+
+function displayShape(str) {
+    if (false) {
+        const shapes = document.getElementById("shapes");
+        shapes.textContent += str;
+        shapes.textContent += '\n';
+    }
+}
