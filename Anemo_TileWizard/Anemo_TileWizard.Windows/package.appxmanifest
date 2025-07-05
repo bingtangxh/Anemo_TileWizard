@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="BingtangXH.Anemo-LockWizard" Version="1.2.6.67" Publisher="CN=ninei" />
+  <Identity Name="BingtangXH.Anemo-LockWizard" Version="1.2.6.68" Publisher="CN=ninei" />
   <Properties>
     <DisplayName>Anemo-LockWizard.Windows</DisplayName>
     <PublisherDisplayName>BingtangXH</PublisherDisplayName>

@@ -146,6 +146,12 @@ var imageData = []; // 存储所有图片数据
             //document.getElementById("radioButton").addEventListener("click", function () {
             //});
 
+            const errors = document.getElementById("errors");
+            errors.textContent = '';
+
+            const shapes = document.getElementById("shapes");
+            shapes.textContent = '';
+
             getBingWallpaper();
 
             saveandRestoreSelectedStyle();
