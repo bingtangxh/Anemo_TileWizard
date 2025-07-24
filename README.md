@@ -32,7 +32,8 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 5. 将其中的 basebrd.dll，替换*C:\Windows\Branding\Basebrd\basebrd.dll*。
 
-{% folding 如果提示“你需要权限才能进行此操作”而你又不会编辑权限，请展开并照做 %}
+<details>
+  <summary>如果提示“你需要权限才能进行此操作”而你又不会编辑权限，请展开并照做</summary>
 
 1. 将*C:\Windows\Branding\Basebrd\basebrd.dll*右键→属性，切换到“安全”选项卡，再单击下方的“高级(&V)”按钮。
 
@@ -56,13 +57,14 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 11. 如果你发现仍然有弹窗提示，那么请瞪大你的眼睛：刚才的弹窗是“你需要权限”，下方的按钮只有“重试”和“取消”，而此刻的弹窗应该是“你需要提供管理员权限”，下方你已经可以单击“继续”按钮了。
 
-{% endfolding %}
+</details>
 
 6. 注意，如果不是 Windows RT 8.1，那么不要整个删除 *tokens* 文件夹，而是将 *C:\Windows\System32\spp\tokens\skus* 内的一个文件夹删除，一般出厂预装的系统会是 *CoreCountrySpecific* ，然后将 *EmbeddedIndustryE* 这个文件夹放进 *skus* 文件夹内。
 如果是 Windows RT 8.1，那么将 *C:\Windows\System32\spp\tokens* 文件夹整个删除，将解压缩出来的 tokens 文件夹替换上去。
 
 
-{% folding 编辑权限的时候要注意 %}
+<details>
+  <summary>编辑权限的时候要注意</summary>
 
 1. 更改所有者的时候，你会发现，原先的所有者并不是 *TrustedInstaller* ，而是 *SYSTEM* 。
 
@@ -72,7 +74,7 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 4. 最后单击“确定”→会出现弹窗，单击“是”→还是弹窗，再单击“是”→高级安全设置关掉了，在属性窗口里单击“确定”
 
-{% endfolding %}
+</details>
 
 7. 然后右键*a.bat*，以管理员身份运行。会出现一个巨大的窗口，先关掉黑色的命令提示符窗口，再关闭这个巨大的窗口。
 
@@ -156,14 +158,16 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 ### Windows 10 Mobile（无应用安装程序）
 
-1. 先打开“设置”→“更新与安全”→“面向开发人员”，打开开发人员模式。
+1. 先在手机上打开“设置”→“更新与安全”→“面向开发人员”，打开开发人员模式。
 
-2. 用电脑前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。
+2. 需要要在电脑上安装 Visual Studio 2015 Community，并勾选安装组件 Windows Phone SDK 8.1。
+  
+3. 用电脑前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。
 
-3. 将手机正常开机，解除锁屏，连接到电脑，在电脑上打开开始菜单或开始屏幕，然后在 Windows Phone SDK 8.1 文件夹中找到 *Windows Phone Application Deployment 8.1*，打开它。
+4. 将手机正常开机，解除锁屏，连接到电脑，在电脑上打开开始菜单或开始屏幕，然后在 Windows Phone SDK 8.1 文件夹中找到 *Windows Phone Application Deployment 8.1*，打开它。
 
-4. 在该程序的窗口中，浏览解压缩出来的 appx 文件，然后单击“部署”。
+5. 在该程序的窗口中，浏览解压缩出来的 appx 文件，然后单击“部署”。
 
-5. 打开“设置”，点击“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
+6. 打开“设置”，点击“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
 
-6. 现在你可以在开始屏幕中打开 Anemo LockWizard，然后设置你的自定义文本了，设置完成后，点击底部的“提交 Sbmt.”。
+7. 现在你可以在开始屏幕中打开 Anemo LockWizard，然后设置你的自定义文本了，设置完成后，点击底部的“提交 Sbmt.”。
