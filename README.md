@@ -22,7 +22,7 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 ### Windows 8.1 和 Windows RT 8.1
 
-1. *第 2~14 步为获取开发者证书，如你的系统已经获取，可直接跳过*
+1. *第 2~13 步为获取开发者证书，如你的系统已经获取，可直接跳过*
 
 2. 下载[8.1lob_withbundleassoc.zip](https://www.bingtangxh.moe/woa32/8.1lob_withbundleassoc.zip)，将其解压缩。
 
@@ -142,13 +142,13 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 2. 下载[应用安装程序](https://www.bingtangxh.moe/woa32/appinstaller.appxbundle)，在文件资源管理器中将其安装，然后稍等一会。
 
-3. 用电脑前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。
+3. 用电脑前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。再还需要在仓库中单独下载 .cer 证书文件。
 
-4. 将 .cer 证书文件、应用的 Appx 文件本体，还有*Dependencies*文件夹中的WinJS依赖包 Appx 文件都复制到手机上。
+4. 将 .cer 证书文件、应用的 Appx 文件本体*Anemo_LockWizard.WindowsPhone_\*_AnyCPU.appx*，还有*Dependencies*文件夹中的*Microsoft.Phone.WinJS.2.1.appx*都复制到手机上。
 
 5. 在手机上打开文件资源管理器，导入 .cer 证书。
 
-6. 在手机上安装 WinJS 依赖包，打开方式选择“应用安装程序”。
+6. 在手机上安装*Microsoft.Phone.WinJS.2.1.appx*，打开方式选择“应用安装程序”。
 
 7. 在手机上安装我的软件 Appx 包本体，打开方式还是选择“应用安装程序”。
 
@@ -158,9 +158,9 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 ### Windows 10 Mobile（无应用安装程序）
 
-1. 先在手机上打开“设置”→“更新与安全”→“面向开发人员”，打开开发人员模式。
+1. 你需要在电脑上安装 Visual Studio 2015 Community，并勾选安装组件 Windows Phone SDK 8.1。
 
-2. 需要要在电脑上安装 Visual Studio 2015 Community，并勾选安装组件 Windows Phone SDK 8.1。
+2. 在手机上打开“设置”→“更新与安全”→“面向开发人员”，打开开发人员模式。
   
 3. 用电脑前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。
 
