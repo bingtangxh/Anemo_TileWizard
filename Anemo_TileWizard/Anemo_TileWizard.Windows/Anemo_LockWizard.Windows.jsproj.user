@@ -14,4 +14,7 @@
     <MachineName>192.168.1.106</MachineName>
     <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerType>NativeOnly</DebuggerType>
+  </PropertyGroup>
 </Project>
