@@ -11,7 +11,6 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 ~尚不支持 Andromeda 或 Windows 10X。~
 
-
 # 安装方法
 
 ## ~从商店安装~
@@ -22,7 +21,7 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 ### Windows 8.1 和 Windows RT 8.1
 
-1. *第 2~13 步为获取开发者证书，如你的系统已经获取，可直接跳过*
+1. *第 2~13 步为开启侧载和获取开发者证书，如你的系统已经开启侧载，可直接跳过*
 
 2. 下载[8.1lob_withbundleassoc.zip](https://www.bingtangxh.moe/woa32/8.1lob_withbundleassoc.zip)，将其解压缩。
 
@@ -30,7 +29,7 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 4. 根据你的操作系统架构，选取对应的文件夹。
 
-5. 将其中的 basebrd.dll，替换*C:\Windows\Branding\Basebrd\basebrd.dll*。
+5. 先将*C:\Windows\Branding\Basebrd\basebrd.dll*备份，然后将压缩包解压出来的 basebrd.dll，替换*C:\Windows\Branding\Basebrd\basebrd.dll*。
 
 <details>
   <summary>如果提示“你需要权限才能进行此操作”而你又不会编辑权限，请展开并照做</summary>
@@ -59,12 +58,12 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 </details>
 
-6. 注意，如果不是 Windows RT 8.1，那么不要整个删除 *tokens* 文件夹，而是将 *C:\Windows\System32\spp\tokens\skus* 内的一个文件夹删除，一般出厂预装的系统会是 *CoreCountrySpecific* ，然后将 *EmbeddedIndustryE* 这个文件夹放进 *skus* 文件夹内。
+6. 注意，如果不是 Windows RT 8.1，那么不要整个删除 *tokens* 文件夹，而是将 *C:\Windows\System32\spp\tokens\skus* 内的一个文件夹（一般出厂预装的系统会是 *CoreCountrySpecific*）将其备份，然后从原地删除 ，再将 *EmbeddedIndustryE* 这个文件夹放进 *skus* 文件夹内。
 如果是 Windows RT 8.1，那么将 *C:\Windows\System32\spp\tokens* 文件夹整个删除，将解压缩出来的 tokens 文件夹替换上去。
 
 
 <details>
-  <summary>编辑权限的时候要注意</summary>
+  <summary>编辑权限的时候要注意，如果你刚才才照着改的 basebard.dll 的权限，那么这次是文件夹，请展开查看</summary>
 
 1. 更改所有者的时候，你会发现，原先的所有者并不是 *TrustedInstaller* ，而是 *SYSTEM* 。
 
@@ -82,15 +81,17 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 9. 再次开机后，务必连接到互联网。
 
-10. 再次右键 *a.bat* ，以管理员身份运行。还是会出现一个巨大的窗口，但是这次只关掉巨大的窗口，不要关闭黑色的命令提示符窗口。
+10. 右键 *a.bat* ，以管理员身份运行（这是第二次）。还是会出现一个巨大的窗口，但是这次只关掉巨大的窗口，不要关闭黑色的命令提示符窗口。
 
 11. 然后会依次出现“成功地安装了产品密钥”“密钥管理服务计算机名称成功地设置为”“成功地激活了产品”，都单击“确定”。
 
 12. 然后双击导入*gpedit_Appx.reg*和*Win8一键安装appx_带捆绑包关联.reg*。
 
-13. 再次重启。
+13. 再次重启。现在你的系统已经开启侧载了，可以自由安装 Appx 应用了，但是不一定有开发者许可证，也就是不一定可以进行开发、调试。
 
--  打开 PowerShell ，输入 Get-WindowsDeveloperLicense，回车查看效果。（如果你不是开发者，不需要进行开发调试应用，就不用这一步）
+-  打开 PowerShell ，输入 Get-WindowsDeveloperLicense，回车查看是否有开发者许可证。
+-  （如果你不是开发者，不需要进行开发调试应用，只想不走商店安装 Appx ，那么只开启侧载就可以，而开发者许可证即使没有，也没关系）
+-  如果你确实需要开发者许可证，就比较麻烦了，先确保你导入了注册表文件，然后建议先管理员身份 slmgr.vbs -upk，然后重启，重新以管理员身份运行 a.bat 再试。
 
 14. 前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。
 
@@ -132,7 +133,7 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 4. 将手机正常开机，解除锁屏，连接到电脑，在电脑上打开开始菜单或开始屏幕，然后在 Windows Phone SDK 8.1 文件夹中找到 *Windows Phone Application Deployment 8.1*，打开它。
 
-5. 在该程序的窗口中，浏览解压缩出来的 appx 文件，然后单击“部署”。
+5. 在该程序的窗口中，浏览解压缩出来的*Anemo_LockWizard.WindowsPhone_\*_AnyCPU.appx*文件，然后单击“部署”。
 
 6. 打开“设置”，点击“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
 
@@ -144,15 +145,15 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 2. 下载[应用安装程序](https://www.bingtangxh.moe/woa32/appinstaller.appxbundle)，在文件资源管理器中将其安装，然后稍等一会。
 
-3. 用电脑前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。再还需要在仓库中单独下载 .cer 证书文件。
+3. 用电脑前往[Release](https://github.com/bingtangxh/Anemo_TileWizard/releases/)下载最新版本的压缩包文件，并解压缩。还需要在仓库中单独下载 .cer 证书文件。
 
 4. 将 .cer 证书文件、应用的 Appx 文件本体*Anemo_LockWizard.WindowsPhone_\*_AnyCPU.appx*，还有*Dependencies*文件夹中的*Microsoft.Phone.WinJS.2.1.appx*都复制到手机上。
 
-5. 在手机上打开文件资源管理器，导入 .cer 证书。
+5. 在手机上打开文件资源管理器，浏览并打开 .cer 证书文件，然后导入证书。
 
 6. 在手机上安装*Microsoft.Phone.WinJS.2.1.appx*，打开方式选择“应用安装程序”。
 
-7. 在手机上安装我的软件 Appx 包本体，打开方式还是选择“应用安装程序”。
+7. 在手机上安装我的软件 Appx 包本体*Anemo_LockWizard.WindowsPhone_\*_AnyCPU.appx*，打开方式还是选择“应用安装程序”。
 
 8. 再打开“设置”，点击“个性化”→“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
 
@@ -168,7 +169,7 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 4. 将手机正常开机，解除锁屏，连接到电脑，在电脑上打开开始菜单或开始屏幕，然后在 Windows Phone SDK 8.1 文件夹中找到 *Windows Phone Application Deployment 8.1*，打开它。
 
-5. 在该程序的窗口中，浏览解压缩出来的 appx 文件，然后单击“部署”。
+5. 在该程序的窗口中，浏览解压缩出来的*Anemo_LockWizard.WindowsPhone_\*_AnyCPU.appx*文件，然后单击“部署”。
 
 6. 打开“设置”，点击“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
 
