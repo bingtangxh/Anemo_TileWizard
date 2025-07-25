@@ -35,13 +35,13 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
   <summary>如果提示“你需要权限才能进行此操作”而你又不会编辑权限，请展开并照做</summary>
 
 1. 将*C:\Windows\Branding\Basebrd\basebrd.dll*右键→属性，切换到“安全”选项卡，再单击下方的“高级(&V)”按钮。
-![](./getstarted/1.png)
+![Attributes window](./getstarted/1.png)
 2. 在弹出的“basebrd.dll的高级安全设置”窗口的顶部，你会看到“所有者： TrustedInstaller”，单击右边的“更改(&C)”。
-![](./getstarted/2.png)
+![Advanced security settings window](./getstarted/2.png)
 3. 在弹出的“选择用户和组”对话框当中，单击底部的“高级(&A)...”按钮。
-![](./getstarted/3.png)
+![Choose user and group](./getstarted/3.png)
 4. 单击“立即查找(&N)”，然后在底部的查找结果当中选择“Users”，然后单击“确定”。
-![](./getstarted/4.png)
+![Choose user and group search](./getstarted/4.png)
 5. 在回到“选择用户和组”对话框后，你会看到“输入要选择的对象名称(例如)(&E):”多出了一个带下划线的名称。继续单击“确定”。
 
 6. 回到“basebrd.dll的高级安全设置”，再单击“确定”。（如果你的屏幕太小，点不到“确定”，就调出触摸键盘，按一下回车键）
@@ -49,14 +49,14 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 7. 回到“basebrd.dll 属性”，单击“编辑(&E)”。
 
 8. 在“basebrd.dll 权限”中，找到“组或用户名:”下的“Users”，然后勾选“完全控制”“允许”对应的复选框。
-![](./getstarted/6.png)
+![privileges](./getstarted/6.png)
 9. 单击“确定”，然后会出现“要继续吗？”对话框，单击“是(&Y)”。
-![](./getstarted/5.png)
+![Windows Security confirm1](./getstarted/5.png)
 10. 再单击“确定”，现在你会发现 basebrd.dll 已经可以替换覆盖了。
 
 11. 如果你发现仍然有弹窗提示，那么请瞪大你的眼睛：刚才的弹窗是“你需要权限”，下方的按钮只有“重试”和“取消”，而此刻的弹窗应该是“你需要提供管理员权限”，下方你已经可以单击“继续”按钮了。
-![](./getstarted/10.png)
-![](./getstarted/9.png)
+![Refused_noway](./getstarted/10.png)
+![Refused_continue](./getstarted/9.png)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 </details>
@@ -71,14 +71,14 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 1. 更改所有者的时候，你会发现，原先的所有者并不是 *TrustedInstaller* ，而是 *SYSTEM* 。
 
 2. 更改完了之后，会有一个“替换子容器和对象的所有者”，务必勾上。
-![](./getstarted/7.png)
+![Advanced security settings window](./getstarted/7.png)
 3. 然后单击确定，回到属性窗口，再单击“编辑(&E)”，然后给 Users 群组赋予允许完全控制的权限，再确定。
-![](./getstarted/6.png)
-4. 最后改完了权限之后，还需要点开一下“高级(&V)”，打开高级安全设置，然后单击“更改权限”，再勾上底部的“使用可从此对象继承的权限项目替换所有子对象的权限项目(&P)”。
-![](./getstarted/7.png)
+![privileges](./getstarted/6.png)
+4. 最后改完了权限之后，还需要点开一下“高级(&V)”，再次打开高级安全设置，然后单击“更改权限”，再勾上底部的“使用可从此对象继承的权限项目替换所有子对象的权限项目(&P)”。
+![Advanced security settings window](./getstarted/7.png)
 5. 最后单击“确定”→会出现弹窗，单击“是”→还是弹窗，再单击“是”→高级安全设置关掉了，在属性窗口里单击“确定”
-![](./getstarted/8.png)
-![](./getstarted/5.png)
+![Windows Security confirm2](./getstarted/8.png)
+![Windows Security confirm1](./getstarted/5.png)
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 </details>
 
