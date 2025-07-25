@@ -97,12 +97,14 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 15. 双击解压出来的 .cer 文件，依次单击“安装证书”→“本地计算机”→“下一步”→“将所有的证书都放入下列存储”→“浏览”→“受信任的根证书颁发机构”→“下一步”→“完成”，然后应该会导入成功。
 
 16. 打开*Dependencies*文件夹，双击安装*Microsoft.WinJS.2.0.appx*。
+   
+    - （如果你跳过了第 12 步的注册表文件导入，那么你需要使用 PowerShell 指令 *Add-AppxPackage Microsoft.WinJS.2.0.appx* 来安装）
 
-17. 回到上一层文件夹，双击安装*Anemo_LockWizard.Windows_\*_AnyCPU.appx*。
+19. 回到上一层文件夹，双击安装*Anemo_LockWizard.Windows_\*_AnyCPU.appx*。
 
-18. 打开电脑设置，点击“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
+20. 打开电脑设置，点击“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
 
-19. 现在你可以在开始屏幕中打开 Anemo LockWizard，然后设置你的自定义文本了，设置完成后，从底部滑动唤出底栏，然后点击“提交 Sbmt.”。
+21. 现在你可以在开始屏幕中打开 Anemo LockWizard，然后设置你的自定义文本了，设置完成后，从底部滑动唤出底栏，然后点击“提交 Sbmt.”。
 
 ### Windows 10 和 Windows 11
 
