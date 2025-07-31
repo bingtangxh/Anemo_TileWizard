@@ -34,7 +34,7 @@
         <m2:ApplicationView MinWidth="default" />
       </m2:VisualElements>
       <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="js/default.js:TileBackgroundTask.run">
+        <Extension Category="windows.backgroundTasks" StartPage="js\bgtask.js">
           <BackgroundTasks>
             <Task Type="timer" />
           </BackgroundTasks>

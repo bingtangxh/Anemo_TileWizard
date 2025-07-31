@@ -15,7 +15,63 @@
     <link href="/css/default.css" rel="stylesheet">
     <script>
         var isPhoneMode = false;
-
+        function registerTileUpdateTask() {
+            var background = Windows.ApplicationModel.Background;
+            var taskName = "TileUpdateTask";
+            var iter = Windows.ApplicationModel.Background.BackgroundTaskRegistration.allTasks.first();
+            while (iter.hasCurrent) {
+                if (iter.current.value.name === taskName) {
+                    displayShape('已注册，无需重复注册');
+                    return;
+                }
+                iter.moveNext();
+            }
+            //builder.taskEntryPoint = "js/bgtask.js:TileBackgroundTask.run"; // 指向 bgtask.js
+            displayShape("马上开始 Windows.ApplicationModel.Background.BackgroundExecutionManager.requestAccessAsync().done(function (status)");
+            Windows.ApplicationModel.Background.BackgroundExecutionManager.requestAccessAsync().done(function (status) {
+                displayShape("马上开始检测 background.BackgroundAccessStatus");
+                if (status !== background.BackgroundAccessStatus.denied &&
+                    status !== background.BackgroundAccessStatus.unspecified) {
+                    var builder = new background.BackgroundTaskBuilder();
+                    builder.name = taskName;
+                    builder.taskEntryPoint = "js\\bgtask.js"; // 仅需文件路径
+                    builder.setTrigger(new background.TimeTrigger(15, false));
+                    builder.addCondition(new Windows.ApplicationModel.Background.SystemCondition(Windows.ApplicationModel.Background.SystemConditionType.userPresent));
+                    try {
+                        var task = builder.register();
+                    } catch (ex) {
+                        console.error("注册失败: " + ex.message);
+                        displayShape("注册失败: " + ex.message);
+                    }
+                    if (!(task == null)) displayShape("注册函数执行好了");
+                } else {
+                    displayShape("注册失败: " + "Windows.ApplicationModel.Background.BackgroundAccessStatus 是 denied 或 unspecified");
+                }
+            });
+            displayShape("注册函数执行完毕");
+        }
+        function checkTileUpdateTaskRegistered() {
+            var background = Windows.ApplicationModel.Background;
+            var taskName = "TileUpdateTask";
+            var iter = background.BackgroundTaskRegistration.allTasks.first();
+            var found = false;
+            var taskShape = '';
+            while (iter.hasCurrent) {
+                var task = iter.current.value;
+                if (task.name === taskName) {
+                    found = true;
+                    displayShape("已在 background.BackgroundTaskRegistration.allTasks 中找到 TileUpdateTask");
+                    break;
+                }
+                iter.moveNext();
+            }
+            if (found) {
+                // taskShape += "后台任务 TileUpdateTask 已注册。";
+            } else {
+                displayShape("后台任务 TileUpdateTask 未注册！");
+            }
+            return;
+        }
         function setasLockScreenBackground() {
             if (imageData.length === 0) {
                 // popup('imageData.length 为 0');
@@ -253,6 +309,9 @@
             <button data-win-control="WinJS.UI.AppBarCommand" id="optionButton"
                     data-win-options="{label:'选项 Opt.', icon:'settings', section:'selection', tooltip:'设置锁屏背景相关选项 Set if you need to submit with the wallpaper to lock screen'}"
                     onclick="showOptions()"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" id="debugRunBgTask"
+                    data-win-options="{label:'step 置 1', icon:'settings', section:'selection', tooltip:'点击强制运行'}"
+                    ></button>
         </div>
 
         <div id="optionsFlyout" data-win-control="WinJS.UI.Flyout">

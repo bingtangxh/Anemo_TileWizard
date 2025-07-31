@@ -77,6 +77,20 @@
             var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
             window.location.href = imageUrl;
         }
+        function checkAppVersion() {
+            var localSettings = Windows.Storage.ApplicationData.current.localSettings;
+            var pkgVersion = Windows.ApplicationModel.Package.current.id.version;
+            var backgroundExecMgr = Windows.ApplicationModel.Background.BackgroundExecutionManager;
+            var appVersion = pkgVersion.build + "." +
+                                pkgVersion.major + "." +
+                                pkgVersion.minor + "." +
+                                pkgVersion.revision;
+            if (Windows.Storage.ApplicationData.current.localSettings.values["appVersion"] != appVersion) {
+                Windows.Storage.ApplicationData.current.localSettings.values["appVersion"] = appVersion;
+                Windows.ApplicationModel.Background.BackgroundExecutionManager.removeAccess();
+            }
+            Windows.ApplicationModel.Background.BackgroundExecutionManager.requestAccessAsync();
+        }
     </script>
     <script src="/js/default.js"></script>
 </head>

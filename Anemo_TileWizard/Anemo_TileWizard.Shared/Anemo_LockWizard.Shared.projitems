@@ -8,6 +8,7 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)css\default.css" />
     <Content Include="$(MSBuildThisFileDirectory)images\PNG5231.png" />
+    <Content Include="$(MSBuildThisFileDirectory)js\bgtask.js" />
     <Content Include="$(MSBuildThisFileDirectory)js\default.js" />
   </ItemGroup>
 </Project>
