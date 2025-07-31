@@ -17,7 +17,22 @@
     <script>
         var isPhoneMode = true;
         function setasLockScreenBackground() {
-            return;
+            if (imageData.length === 0) {
+                displayShape('imageData.length 为 0');
+                return;
+            }
+            var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
+            displayShape(imageUrl + '\n' + currentWallpaperIndex);
+
+            downloadImageToLocal(imageUrl)
+                .then(function (file) {
+                    return Windows.System.UserProfile.LockScreen.setImageFileAsync(file);
+                    // 这行代码对于电脑有用，WP8.1 上没用，W10M不确定
+                })
+                .then(function () {
+                    console.log('锁屏背景设置成功！');
+                    displayShape('锁屏背景设置成功！');
+                })
         }
         function saveandRestoreSelectedStyle_old() {
             document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
@@ -97,7 +112,7 @@
 <body class="phone" style="overflow:auto">
 
         <main>
-            <div id="background-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1; background-image:url('images/1.png');
+            <div id="background-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1; background-image:url('images/PNG5231.png');
         background-size:cover;
         background-position:center;">
             </div>
@@ -124,7 +139,7 @@
                 <legend>选项 Options</legend>
                 <div>
                     <label class="win-switch">
-                        <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox" disabled>
+                        <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox">
                         <span class="win-switch-content">提交时一并设置锁屏壁纸（尚未实现）<br>Set lock screen background while submit (not available yet)</span>
                         <span class="win-switch-track">
                             <span class="win-switch-thumb"></span>
@@ -140,15 +155,6 @@
                         </span>
                     </label>
                 </div>
-                <!--<div>
-                    <label class="win-switch">
-                        <input type="checkbox" class="win-switch-input" id="useEnglishDescription_CheckBox">
-                        <span class="win-switch-content">不获取中文描述而是获取英文的（尚未实现）<br>Obtain English description of wallpaper instead of Chinese (not available yet)</span>
-                        <span class="win-switch-track">
-                            <span class="win-switch-thumb"></span>
-                        </span>
-                    </label>
-                </div>-->
             </fieldset>
 
             <div id="radioFlyout">

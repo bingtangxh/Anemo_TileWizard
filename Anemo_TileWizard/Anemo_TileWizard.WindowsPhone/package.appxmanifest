@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="BingtangXH.Anemo-LockWizard.Phone" Version="1.1.6.20" Publisher="CN=ninei" />
+  <Identity Name="BingtangXH.Anemo-LockWizard.Phone" Version="1.1.7.23" Publisher="CN=ninei" />
   <mp:PhoneIdentity PhoneProductId="eb63d20c-578e-4fa5-bde2-51a7915d1fe6" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Anemo-LockWizard.WindowsPhone</DisplayName>
@@ -35,6 +35,14 @@
           <BackgroundTasks>
             <Task Type="timer" />
           </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.fileOpenPicker" StartPage="wallpaper.html">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <FileType>.png</FileType>
+              <FileType>.jpg</FileType>
+            </SupportedFileTypes>
+          </FileOpenPicker>
         </Extension>
       </Extensions>
     </Application>

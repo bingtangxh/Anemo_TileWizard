@@ -52,7 +52,7 @@ var imageData = []; // 存储所有图片数据
             //    };
             //    WinJS.UI.SettingsFlyout.populateSettings(e);
             //};
-            if (!isPhoneMode) {
+            if (!isPhoneMode && false) {
                 document.getElementById("debugRunBgTask").addEventListener("click", function () {
                     Windows.Storage.ApplicationData.current.localSettings.values["step"] = 1;
                     var background = Windows.ApplicationModel.Background;
@@ -64,13 +64,15 @@ var imageData = []; // 存储所有图片数据
                             console.log("发现后台任务，尝试注销：" + task.name);
                             displayShape("发现后台任务，尝试注销：" + task.name);
                             task.unregister(true); // 参数 true 表示同时取消已排队的任务
+                        } else {
+                            displayShape("发现后台任务，没有注销：" + task.name);
                         }
                         iter.moveNext();
 
                     }
                 });
             }
-
+            if (!isPhoneMode&&false) {adjustControlsPosition();}
             getTile();
             var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
             var isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox = document.getElementById("isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox");
@@ -95,13 +97,13 @@ var imageData = []; // 存储所有图片数据
                 taskShape += "本程序已被允许后台运行。\n";
             }
             if (Windows.Storage.ApplicationData.current.localSettings.values["lastRun"]) {
-                taskShape += ("上次后台任务触发时间：" + lastRun + '\n');
+                taskShape += ("上次后台任务触发时间：" + Windows.Storage.ApplicationData.current.localSettings.values["lastRun"] + '\n');
             } else {
                 taskShape += "后台任务似乎从未触发！\n";
             }
             displayShape("step 的数值：" + Windows.Storage.ApplicationData.current.localSettings.values["step"]);
             displayShape(taskShape);
-            if (isPhoneMode) {
+            if (isPhoneMode||true) {
                 
                shapes.textContent = '';
             }
@@ -293,9 +295,6 @@ function getBingWallpaper() {
                         // popup(data.images[1].url + '\n' + apiUrl);
                         useLocalImage = false;
                         changeBackground(currentWallpaperIndex);
-                        if (Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"] === 'true') {
-                            copyDescription();
-                        }
                         document.getElementById('prev-button').disabled = false;
                         document.getElementById('next-button').disabled = false;
                         if (isPhoneMode === false) {
@@ -404,7 +403,7 @@ function changeBackground(index) {
             showWallpaperInfo(index);
         }
     } else {
-        popup('imageData.length 为 0 或 index 已经超出边界');
+        displayError('imageData.length 为 0 或 index 已经超出边界');
         return;
     }
 }
@@ -412,7 +411,7 @@ function changeBackground(index) {
 // 切换图片的函数 （似乎用不到）
 function showImage(index) {
     if (index < 0 || index >= images.length) {
-        popup('index 已经超出边界');
+        displayError('index 已经超出边界');
         return;
     }
 
@@ -427,7 +426,7 @@ function showImage(index) {
 // 设置动态磁贴的函数 （似乎用不到）
 function setTileNotification() {
     if (imageData.length === 0) {
-        popup('imageData.length 为 0');
+        displayError('imageData.length 为 0');
     }
 
     // 获取磁贴管理器

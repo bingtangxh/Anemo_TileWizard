@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="BingtangXH.Anemo-LockWizard" Version="1.2.6.68" Publisher="CN=ninei" />
+  <Identity Name="BingtangXH.Anemo-LockWizard" Version="1.2.8.70" Publisher="CN=ninei" />
   <Properties>
     <DisplayName>Anemo-LockWizard.Windows</DisplayName>
     <PublisherDisplayName>BingtangXH</PublisherDisplayName>
@@ -31,11 +31,12 @@
           <m2:Rotation Preference="portraitFlipped" />
           <m2:Rotation Preference="landscapeFlipped" />
         </m2:InitialRotationPreference>
-        <m2:ApplicationView MinWidth="default" />
+        <m2:ApplicationView MinWidth="width320" />
       </m2:VisualElements>
       <Extensions>
         <Extension Category="windows.backgroundTasks" StartPage="js\bgtask.js">
           <BackgroundTasks>
+            <Task Type="systemEvent" />
             <Task Type="timer" />
           </BackgroundTasks>
         </Extension>
