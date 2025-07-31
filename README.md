@@ -11,6 +11,10 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 ~尚不支持 Andromeda 或 Windows 10X。~
 
+对于 Windows 8 Release Preview 和 Windows 8 的支持由 Li_zip 进行移植。
+
+不支持 Windows Phone 8 或更早版本、Windows 8 Consumer Preview 或更早版本。
+
 # 安装方法
 
 ## ~从商店安装~
@@ -128,7 +132,7 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 6. 再打开“设置”，点击“个性化”→“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
 
-7. 现在你可以在开始菜单中打开 Anemo LockWizard，然后设置你的自定义文本了，设置完成后，点击左上角，然后点击“应用命令”，然后点击“提交 Sbmt.”。
+7. 现在你可以在开始菜单中打开 Anemo LockWizard，然后设置你的自定义文本了，设置完成后，点击左上角，然后点击“应用命令”，然后点击底部弹出的“提交 Sbmt.”。
 
 ### Windows Phone 8.1
 
@@ -176,8 +180,8 @@ Anemo LockWizard 是一个能将自定义的文本显示在 Windows 锁屏界面
 
 4. 将手机正常开机，解除锁屏，连接到电脑，在电脑上打开开始菜单或开始屏幕，然后在 Windows Phone SDK 8.1 文件夹中找到 *Windows Phone Application Deployment 8.1*，打开它。
 
-5. 在该程序的窗口中，浏览解压缩出来的*Anemo_LockWizard.WindowsPhone_\*_AnyCPU.appx*文件，然后单击“部署”。
+5. 在该程序的窗口中，浏览解压缩出来的*Anemo_LockWizard.WindowsPhone_\*_AnyCPU.appx*文件，然后单击“部署”，等待部署完成。
 
-6. 打开“设置”，点击“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
+6. 再打开“设置”，点击“个性化”→“锁屏界面”，然后在“选择显示详细状态的应用”这里选择我的*Anemo LockWizard*。
 
 7. 现在你可以在开始屏幕中打开 Anemo LockWizard，然后设置你的自定义文本了，设置完成后，点击底部的“提交 Sbmt.”。
