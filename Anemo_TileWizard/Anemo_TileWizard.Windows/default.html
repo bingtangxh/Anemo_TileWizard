@@ -1,16 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anemo LockWizard</title>
-
     <!-- WinJS 引用 -->
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet">
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
-
     <!-- CialloWorldJS.Windows 引用 -->
     <link href="/css/default.css" rel="stylesheet">
     <script>
@@ -102,26 +99,21 @@
                 console.error('设置锁屏背景失败:', error);
             })*/;
         }
-
         function showOptions() {
             var optionsFlyout = document.getElementById("optionsFlyout").winControl;
             var optionButton = document.getElementById("optionButton").winControl;
             optionsFlyout.show(optionButton);
         }
-
         function comeoutAppBar() {
             var appBar = document.getElementById("appBar").winControl;
             appBar.show();
         }
-
         function showStyleSelection() {
             var radioFlyout = document.getElementById("radioFlyout").winControl;
             var radioButton = document.getElementById("radioButton").winControl;
             var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
             radioFlyout.show(radioButton);
         }
-
-        // 保存图片的函数
         function openinBrowser() {
             if (imageData.length === 0) {
                 displayError('imageData.length 为 0');
@@ -140,8 +132,6 @@
             // 这行代码似乎也是手机上没用
             document.body.removeChild(link); // 移除<a>标签
         }
-
-        // 把壁纸信息显示到右下角
         function showWallpaperInfo(index) {
             if (imageData.length > 0 && index >= 0 && index < imageData.length) {
                 var info = imageData[index];
@@ -159,7 +149,6 @@
             infoBox.style.display = "block";
             adjustControlsPosition();
         }
-
         function saveandRestoreSelectedStyle() {
             document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
                 if (e.target && e.target.type === 'radio') {
@@ -181,43 +170,55 @@
         function submit() {
             const radios = document.getElementsByName('style');
             let selectedStyle;
-
             for (let i = 0; i < radios.length; i++) {
                 if (radios[i].checked) {
                     selectedStyle = radios[i].value;
                     break;
                 }
             }
-
             var type = Number(selectedStyle);
-
             updateTile(type);
             var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
             if (isWallpaperSubmissionEnabled_CheckBox.checked) {
                 setasLockScreenBackground();
             }
         }
-function adjustControlsPosition() {
-    const info = document.getElementById("wallpaper-info");
-    const controls = document.getElementById("wallpaper-controls");
+        function adjustControlsPosition() {
+            const info = document.getElementById("wallpaper-info");
+            const controls = document.getElementById("wallpaper-controls");
 
-    if (info && controls) {
-        const infoRect = info.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const bottomSpacing = 10; // 距离 info 的间距
+            if (info && controls) {
+                const infoRect = info.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                const bottomSpacing = 10; // 距离 info 的间距
 
-        const newBottom = windowHeight - infoRect.top + bottomSpacing;
-        // controls.style.bottom = newBottom + "px";
+                const newBottom = windowHeight - infoRect.top + bottomSpacing;
+                // controls.style.bottom = newBottom + "px";
 
-    }
-}
+            }
+        }
+        function unregisterBackgroundTask() {
+            Windows.Storage.ApplicationData.current.localSettings.values["step"] = 1;
+            var background = Windows.ApplicationModel.Background;
+            var taskName = "TileUpdateTask";
+            var iter = background.BackgroundTaskRegistration.allTasks.first();
+            while (iter.hasCurrent) {
+                var task = iter.current.value;
+                if (task.name === taskName) {
+                    console.log("发现后台任务，尝试注销：" + task.name);
+                    displayShape("发现后台任务，尝试注销：" + task.name);
+                    task.unregister(true); // 参数 true 表示同时取消已排队的任务
+                } else {
+                    displayShape("发现后台任务，没有注销：" + task.name);
+                }
+                iter.moveNext();
 
-window.addEventListener('resize', adjustControlsPosition);
-
+            }
+        }
+        window.addEventListener('resize', adjustControlsPosition);
     </script>
     <script src="/js/default.js"></script>
 </head>
-
 <body>
     <main>
         <div
@@ -229,11 +230,8 @@ window.addEventListener('resize', adjustControlsPosition);
                 background-position:center;
              ">
         </div>
-
         <h1 class="text-center">Anemo LockWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
-
         <p id="shapes" style="white-space:pre-line;color:deeppink;"></p>
-
         <p>锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
         Set the details on lock screen (Length limits may apply)
         </p>
@@ -242,9 +240,7 @@ window.addEventListener('resize', adjustControlsPosition);
         <textarea id="tileDetail2" placeholder="段落 2&#10;Sentence 2" maxlength="254"></textarea>
         <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）&#10;Sentence 3 (Won't show on lock screen in Windows 10/11 or Windows Phone 8.1)" maxlength="254"></textarea>
         <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）&#10;Sentence 4 (Only show on lock screen in Windows 8.1 or live tile of Windows 10 Mobile or Tablet mode and Windows Phone 8.1)" maxlength="254"></textarea>
-
         <p id="errors" style="white-space:pre-line;color:red;"></p>
-
         <div id="radioFlyout" data-win-control="WinJS.UI.Flyout">
             <form>
                 <fieldset style="width:280px; float:left;">
@@ -268,46 +264,26 @@ window.addEventListener('resize', adjustControlsPosition);
                         <br />
                         <input type="radio" id="styleChoice5" name="style" value=4 />
                         <label for="styleChoice5">0L1S 第一行（小字）</label>
-
                     </div>
                 </fieldset>
             </form>
         </div>
-
         <!-- 这个是在 1.1.4 版本中用于提示锁屏背景设置完成，现在已经不需要了 -->
         <div id="setasLockScreenSuccessFlyout" data-win-control="WinJS.UI.Flyout">
             <p>设置完成。<br />Set as lock screen done.</p>
         </div>
-
-        <!--<button id="come_out" class="block-right" style="width: auto;" onclick="comeoutAppBar();">唤出 Bar（将被移除）</button>-->
-
         <div class="win-bottomlayout" id="bar-to-show-appbar" onclick="comeoutAppBar();"><span>•••</span></div>
-
         <style>
         .win-bottomlayout {
-            height: 15px;
             background-color: teal; /* 可以设置成其他值，设置半透明也可。主要是为了区分能识别出这个位置有个 Bar */
-            position: absolute;
-            bottom: 0px;
-            top: auto;
-            left: 0px;
-            right: 0px;
-            text-align: center;
-            overflow: hidden;
+            position: absolute; top: auto; text-align: center;
+            height: 15px; bottom: 0px; left: 0px; right: 0px; overflow: hidden;
             display: -ms-flexbox;   /* IE Flex容器 */
             -ms-flex-pack: center;  /* 主轴居中 */
         }
-        .win-bottomlayout > span {
-        position: absolute;
-        right: 56px;
-        left: auto;
-        color: white;
-        top: -2px;
-        }
+        .win-bottomlayout > span { position: absolute; right: 56px; left: auto; color: white; top: -2px; }
         </style>
-
         <div id="appBar" data-win-control="WinJS.UI.AppBar" style="background-color:teal;">
-            <!-- 添加按钮 -->
             <button data-win-control="WinJS.UI.AppBarCommand"
                     data-win-options="{label:'滚回 Rbk.', icon:'&#xE1C5;', section:'global', tooltip:'让文本框的内容变回上一次提交的状态 Copy the strings last saved to inputboxes'}"
                     onclick="getTile()"></button>
@@ -317,7 +293,10 @@ window.addEventListener('resize', adjustControlsPosition);
             <button data-win-control="WinJS.UI.AppBarCommand"
                     data-win-options="{label:'关于 About', icon:'emoji2', section:'global', tooltip:'关于本程序 About this program'}"
                     onclick="about()"></button>
-            <button data-win-control="WinJS.UI.AppBarCommand" id="openinBrowser_Button"
+            <button data-win-control="WinJS.UI.AppBarCommand" id="downloadButton"
+                    data-win-options="{label:'下载 DL', icon:'download', section:'global', tooltip:'下载壁纸 Download the wallpaper'}"
+                    onclick="saveImagetoLocal(currentWallpaperIndex)"></button>
+            <button data-win-control="WinJS.UI.AppBarCommand" id="openinBrowserButton"
                     data-win-options="{label:'浏览器打开 Open Brws.', icon:'&#xE114;', section:'global', tooltip:'在浏览器打开壁纸 Open the wallpaper in Browser'}"
                     onclick="openinBrowser()"></button>
             <button data-win-control="WinJS.UI.AppBarCommand"
@@ -333,19 +312,12 @@ window.addEventListener('resize', adjustControlsPosition);
                     onclick="showOptions()"></button>
             <!--<button data-win-control="WinJS.UI.AppBarCommand" id="debugRunBgTask"
                     data-win-options="{label:'注销后台任务', icon:'&#xE106', section:'selection', tooltip:'点击强制运行'}"
-                    ></button>-->
+                    onclick="unregisterBackgroundTask()"></button>-->
         </div>
 
         <div id="optionsFlyout" data-win-control="WinJS.UI.Flyout">
             <fieldset style="width:420px; float:left;">
                 <legend>选项 Options</legend>
-                <!--<div id="isWallpaperSubmissionEnabled" data-win-control="WinJS.UI.ToggleSwitch"
-                 data-win-options="{title: '提交时一并设置锁屏壁纸', checked: true}">
-            </div>
-            <div id="isDescriptionCopyEnabledWhileSwitchingWallpaper" data-win-control="WinJS.UI.ToggleSwitch"
-                 data-win-options="{title: '切换壁纸时一并复制描述', checked: true}">
-            </div>-->
-
                 <div>
                     <label class="win-switch">
                         <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox">
@@ -355,7 +327,6 @@ window.addEventListener('resize', adjustControlsPosition);
                         </span>
                     </label>
                 </div>
-
                 <div>
                     <label class="win-switch">
                         <input type="checkbox" class="win-switch-input" id="isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox">
@@ -365,23 +336,21 @@ window.addEventListener('resize', adjustControlsPosition);
                         </span>
                     </label>
                 </div>
-
-                <!--<div>
+                <div>
                     <label class="win-switch">
-                        <input type="checkbox" class="win-switch-input" id="useEnglishDescription_CheckBox">
-                        <span class="win-switch-content">不获取中文描述而是获取英文的（尚未实现）<br>Obtain English description of wallpaper instead of Chinese (not available yet)</span>
+                        <input type="checkbox" class="win-switch-input" id="switchtoNextWallpaperAfterDownload_CheckBox">
+                        <span class="win-switch-content">下载完成后切换至下一张壁纸<br>Switch to the next wallpaper after downloaded</span>
                         <span class="win-switch-track">
                             <span class="win-switch-thumb"></span>
                         </span>
                     </label>
-                </div>-->
+                </div>
             </fieldset>
         </div>
-
         <div id="wallpaper-info" style="position:fixed;bottom:120px;right:20px;max-width:50%;background:rgba(0,0,0,0.7);color:white;padding:10px;border-radius:5px;display:none;">
             <p id="wallpaper-copyright" style="margin:0;font-size:14px;"></p>
-
-        </div>       <div id="wallpaper-controls" style="position:fixed;bottom:20px;right:20px;background:rgba(0,0,0,0.7);padding:10px;border-radius:5px;z-index:931;">
+        </div>
+        <div id="wallpaper-controls" style="position:fixed;bottom:20px;right:20px;background:rgba(0,0,0,0.7);padding:10px;border-radius:5px;z-index:931;">
             <p style="margin:0 0 10px 0;color:white;">当前壁纸 Current:<span id="current-wallpaper-index"></span></p>
             <button onclick="prevWallpaper()" id="prev-button" style="margin-right:5px;">←</button>
             <button onclick="nextWallpaper()" id="next-button">→</button>

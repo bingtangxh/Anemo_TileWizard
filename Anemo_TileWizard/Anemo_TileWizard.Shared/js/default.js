@@ -8,7 +8,7 @@ var imageData = []; // 存储所有图片数据
 (function () {
     "use strict";
     var background = Windows.ApplicationModel.Background;
-    var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
+    var savedSelectedStyle = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
 
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
@@ -52,35 +52,23 @@ var imageData = []; // 存储所有图片数据
             //    };
             //    WinJS.UI.SettingsFlyout.populateSettings(e);
             //};
-            if (!isPhoneMode && false) {
-                document.getElementById("debugRunBgTask").addEventListener("click", function () {
-                    Windows.Storage.ApplicationData.current.localSettings.values["step"] = 1;
-                    var background = Windows.ApplicationModel.Background;
-                    var taskName = "TileUpdateTask";
-                    var iter = background.BackgroundTaskRegistration.allTasks.first();
-                    while (iter.hasCurrent) {
-                        var task = iter.current.value;
-                        if (task.name === taskName) {
-                            console.log("发现后台任务，尝试注销：" + task.name);
-                            displayShape("发现后台任务，尝试注销：" + task.name);
-                            task.unregister(true); // 参数 true 表示同时取消已排队的任务
-                        } else {
-                            displayShape("发现后台任务，没有注销：" + task.name);
-                        }
-                        iter.moveNext();
-
-                    }
-                });
-            }
-            if (!isPhoneMode&&false) {adjustControlsPosition();}
+ 
             getTile();
-            var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
+            if (!isPhoneMode) {
+                var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
+                isWallpaperSubmissionEnabled_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"];
+                isWallpaperSubmissionEnabled_CheckBox.addEventListener("change", function (e) {
+                    Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"] = isWallpaperSubmissionEnabled_CheckBox.checked;
+                });
+                var switchtoNextWallpaperAfterDownload_CheckBox = document.getElementById("switchtoNextWallpaperAfterDownload_CheckBox");
+                switchtoNextWallpaperAfterDownload_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["switchtoNextWallpaperAfterDownload_CheckBox"];
+                switchtoNextWallpaperAfterDownload_CheckBox.addEventListener("change", function (e) {
+                    Windows.Storage.ApplicationData.current.localSettings.values["switchtoNextWallpaperAfterDownload_CheckBox"] = switchtoNextWallpaperAfterDownload_CheckBox.checked;
+                });
+                checkTileUpdateTaskRegistered();
+            }
             var isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox = document.getElementById("isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox");
-            isWallpaperSubmissionEnabled_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"];
             isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"];
-            isWallpaperSubmissionEnabled_CheckBox.addEventListener("change", function (e) {
-                Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"] = isWallpaperSubmissionEnabled_CheckBox.checked;
-            });
             isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.addEventListener("change", function (e) {
                 Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"] = isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked;
             });
@@ -88,8 +76,6 @@ var imageData = []; // 存储所有图片数据
             getBingWallpaper();
 
             saveandRestoreSelectedStyle();
-
-            if (!isPhoneMode) { checkTileUpdateTaskRegistered(); }
 
             if (background.BackgroundExecutionManager.getAccessStatus() === background.BackgroundAccessStatus.denied) {
                 taskShape += "本程序未被允许后台运行！\n";
@@ -103,10 +89,7 @@ var imageData = []; // 存储所有图片数据
             }
             displayShape("step 的数值：" + Windows.Storage.ApplicationData.current.localSettings.values["step"]);
             displayShape(taskShape);
-            if (isPhoneMode||true) {
-                
-               shapes.textContent = '';
-            }
+            if (true) { shapes.textContent = ''; }
             args.setPromise(WinJS.UI.processAll());
         }
     };
@@ -133,7 +116,6 @@ function popup(message) {
     Windows.UI.Popups.MessageDialog(message).showAsync();
 }
 
-// 更新徽章
 function updateBadge(str) {
     var badgeTemplate = Windows.UI.Notifications.BadgeUpdateManager.getTemplateContent(
         Windows.UI.Notifications.BadgeTemplateType.badgeNumber
@@ -144,7 +126,27 @@ function updateBadge(str) {
     Windows.UI.Notifications.BadgeUpdateManager.createBadgeUpdaterForApplication().update(badgeNotification);
 }
 
-// 更新磁贴文本
+function getTile() {
+    document.getElementById("tileDetail0").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText0"] || '';
+    document.getElementById("tileDetail1").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText1"] || '';
+    document.getElementById("tileDetail2").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText2"] || '';
+    document.getElementById("tileDetail3").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText3"] || '';
+    document.getElementById("tileDetail4").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText4"] || '';
+}
+
+function updateTile(type) {
+
+    var detailString0 = document.getElementById("tileDetail0").value;
+    var detailString1 = document.getElementById("tileDetail1").value;
+    var detailString2 = document.getElementById("tileDetail2").value;
+    var detailString3 = document.getElementById("tileDetail3").value;
+    var detailString4 = document.getElementById("tileDetail4").value;
+
+    setTile(type, detailString0, detailString1, detailString2, detailString3, detailString4);
+
+    popup("设置好了，现在锁屏看看效果吧！\n温馨提示：请先在“设置”中设置本程序为显示详细状态的应用，还需要允许本程序后台运行。\nUpdate tile done. You need also allow me running background and show details on lock screen.");
+}
+
 function setTile(type, str0, str1, str2, str3, str4) {
     // 磁贴文本
     var tileTemplate = Windows.UI.Notifications.TileUpdateManager.getTemplateContent(
@@ -205,7 +207,7 @@ function setTile(type, str0, str1, str2, str3, str4) {
         var tileNotification = new Windows.UI.Notifications.TileNotification(tileTemplate1Line);
         Windows.UI.Notifications.TileUpdateManager.createTileUpdaterForApplication().update(tileNotification);
     }
-    
+
     saveTile(str0, str1, str2, str3, str4);
 }
 
@@ -216,27 +218,6 @@ function saveTile(str0, str1, str2, str3, str4) {
     Windows.Storage.ApplicationData.current.localSettings.values["currentTileText2"] = str2;
     Windows.Storage.ApplicationData.current.localSettings.values["currentTileText3"] = str3;
     Windows.Storage.ApplicationData.current.localSettings.values["currentTileText4"] = str4;
-}
-
-function getTile() {
-    document.getElementById("tileDetail0").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText0"] || '';
-    document.getElementById("tileDetail1").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText1"] || '';
-    document.getElementById("tileDetail2").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText2"] || '';
-    document.getElementById("tileDetail3").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText3"] || '';
-    document.getElementById("tileDetail4").value = Windows.Storage.ApplicationData.current.localSettings.values["currentTileText4"] || '';
-}
-
-function updateTile(type) {
-    
-    var detailString0 = document.getElementById("tileDetail0").value;
-    var detailString1 = document.getElementById("tileDetail1").value;
-    var detailString2 = document.getElementById("tileDetail2").value;
-    var detailString3 = document.getElementById("tileDetail3").value;
-    var detailString4 = document.getElementById("tileDetail4").value;
-
-    setTile(type, detailString0, detailString1, detailString2, detailString3, detailString4);
-
-    popup("设置好了，现在锁屏看看效果吧！\n温馨提示：请先在“设置”中设置本程序为显示详细状态的应用，还需要允许本程序后台运行。\nUpdate tile done. You need also allow me running background and show details on lock screen.");   
 }
 
 function eraseInputBox() {
@@ -292,14 +273,12 @@ function getBingWallpaper() {
                     var data = JSON.parse(response.responseText);
                     if (data.images && data.images.length > 0) {
                         imageData = data.images;
-                        // popup(data.images[1].url + '\n' + apiUrl);
                         useLocalImage = false;
                         changeBackground(currentWallpaperIndex);
                         document.getElementById('prev-button').disabled = false;
                         document.getElementById('next-button').disabled = false;
-                        if (isPhoneMode === false) {
-                            document.getElementById('openinBrowser_Button').disabled = false;
-                        }
+                        document.getElementById('openinBrowserButton').disabled = false;
+                        document.getElementById('downloadButton').disabled = false;
                         if (Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"]) {
                             copyDescription();
                         }
@@ -383,8 +362,9 @@ function useLocalBackground() {
         'url("images/PNG5231.png")';
     document.getElementById('prev-button').disabled = true;
     document.getElementById('next-button').disabled = true;
+    document.getElementById('openinBrowserButton').disabled = true;
+    document.getElementById('downloadButton').disabled = true;
     if (isPhoneMode === false) {
-        document.getElementById('openinBrowser_Button').disabled = true;
         document.getElementById('wallpaper-info').style.display = 'block';
         document.getElementById('wallpaper-copyright').textContent = '无网络连接\n No Internet Connection.';
         document.getElementById('current-wallpaper-index').textContent = '0/0';
@@ -452,7 +432,6 @@ function setTileNotification() {
     }, interval);*/
 }
 
-// 下载图片到本地的函数
 function downloadImageToLocal(imageUrl) {
     return WinJS.xhr({ url: imageUrl, responseType: 'blob' })
         .then(function (response) {
@@ -471,6 +450,100 @@ function downloadImageToLocal(imageUrl) {
                                     stream.close();
                                     return file;
                                 });
+                        });
+                });
+        });
+}
+
+function downloadImageToLocal_new(imageUrl) {
+    return WinJS.xhr({ url: imageUrl, responseType: 'blob' })
+        .then(function (response) {
+            try {
+                var blob = response.response;
+
+                return Windows.Storage.ApplicationData.current.temporaryFolder
+                    .createFileAsync('lockScreenImage.jpg', Windows.Storage.CreationCollisionOption.replaceExisting)
+                    .then(function (file) {
+                        return file.openAsync(Windows.Storage.FileAccessMode.readWrite)
+                            .then(function (stream) {
+                                var inputStream = blob.msDetachStream();
+
+                                return Windows.Storage.Streams.RandomAccessStream.copyAsync(inputStream, stream)
+                                    .then(function () {
+                                        return stream.flushAsync();
+                                    })
+                                    .then(function () {
+                                        stream.close();
+                                        return file;
+                                    });
+                            });
+                    });
+            } catch (err) {
+                console.error("处理图片保存逻辑时发生异常:", err);
+                displayError("处理图片保存逻辑时发生异常:" + err);
+                return WinJS.Promise.wrapError(err); // 或 return Promise.reject(err) 在更现代环境下
+            }
+        },
+        function (xhrError) {
+            console.error("图片下载失败:", xhrError);
+            displayError("图片下载失败:" + xhrError);
+            return WinJS.Promise.wrapError(xhrError);
+        });
+}
+
+function saveImagetoLocal(targetWallpaperIndex) {
+    if (imageData.length === 0) {
+        displayError('imageData.length 为 0');
+        return;
+    }
+    var imageUrl = 'https://www.bing.com' + imageData[targetWallpaperIndex].url;
+    // displayShape(imageUrl + '\n' + targetWallpaperIndex);
+    // var filename = getNowFormatDate() + '-' + targetWallpaperIndex + '.jpg';
+    var filename = imageData[targetWallpaperIndex].enddate + '.jpg';
+    downloadImageToLocal(imageUrl).then(function (file) {
+        return saveFileToPicturesLibrary(file, "BingWallpaperImages", filename);
+    }).then(function (copiedFile) {
+        displayShape(filename + " 已保存到图片库");
+    });
+    if (Windows.Storage.ApplicationData.current.localSettings.values["switchtoNextWallpaperAfterDownload_CheckBox"]) {
+        nextWallpaper();
+    }
+
+}
+
+
+function saveFileToPicturesLibrary(file, folderName, targetFileName) {
+    var picturesFolder = Windows.Storage.KnownFolders.picturesLibrary;
+    return picturesFolder.createFolderAsync(folderName, Windows.Storage.CreationCollisionOption.openIfExists)
+        .then(function (targetFolder) {
+            return file.copyAsync(targetFolder, targetFileName, Windows.Storage.NameCollisionOption.replaceExisting);
+        });
+}
+
+function getNowFormatDate() {
+    let date = new Date(),
+    year = date.getFullYear(), // 获取完整的年份(4位)
+    month = date.getMonth() + 1, // 获取当前月份(0-11,0代表1月)
+    strDate = date.getDate(); // 获取当前日(1-31)
+    if (month < 10) month = '0' + month; // 如果月份是个位数，在前面补0
+    if (strDate < 10) strDate = '0' + strDate; // 如果日是个位数，在前面补0
+    return year + '-' + month + '-' + strDate;
+}
+
+function saveToPicturesLibrary(blob, filename) {
+    var pictures = Windows.Storage.KnownFolders.picturesLibrary;
+    return pictures.createFileAsync(filename, Windows.Storage.CreationCollisionOption.replaceExisting)
+        .then(function (file) {
+            return file.openAsync(Windows.Storage.FileAccessMode.readWrite)
+                .then(function (stream) {
+                    var inputStream = blob.msDetachStream();
+                    return Windows.Storage.Streams.RandomAccessStream.copyAsync(inputStream, stream)
+                        .then(function () {
+                            return stream.flushAsync();
+                        })
+                        .then(function () {
+                            stream.close();
+                            return file;
                         });
                 });
         });
@@ -509,7 +582,6 @@ function copyDescription() {
     document.getElementById("tileDetail1").value = imageData[currentWallpaperIndex].copyright || '';
 }
 
-
 function displayError(str) {
     const errors=document.getElementById("errors");
     errors.textContent += str;
@@ -524,3 +596,6 @@ function displayShape(str) {
     }
 }
 
+function sleep(sleepTime) {
+    for (var start = new Date; new Date - start <= sleepTime;) { }
+}

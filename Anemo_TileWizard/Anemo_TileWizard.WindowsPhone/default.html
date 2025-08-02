@@ -16,40 +16,6 @@
     <link href="/css/default.css" rel="stylesheet" />
     <script>
         var isPhoneMode = true;
-        function setasLockScreenBackground() {
-            if (imageData.length === 0) {
-                displayShape('imageData.length 为 0');
-                return;
-            }
-            var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
-            displayShape(imageUrl + '\n' + currentWallpaperIndex);
-
-            downloadImageToLocal(imageUrl)
-                .then(function (file) {
-                    return Windows.System.UserProfile.LockScreen.setImageFileAsync(file);
-                    // 这行代码对于电脑有用，WP8.1 上没用，W10M不确定
-                })
-                .then(function () {
-                    console.log('锁屏背景设置成功！');
-                    displayShape('锁屏背景设置成功！');
-                })
-        }
-        function saveandRestoreSelectedStyle_old() {
-            document.querySelector('#radioFlyout form').addEventListener('change', function (e) {
-                if (e.target && e.target.type === 'radio') {
-                    var selectedStyle = e.target.value;
-                    Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"] = selectedStyle;
-                    // popup('已保存 selectedStyle = ' + selectedStyle);
-                }
-            });
-
-            var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"]; // WinJS.Application.localSettings.values["selectedOption"];
-            if (savedValue) {
-                document.querySelector('input[value="' + savedValue + '"]').checked = true;
-            } else {
-                document.querySelector('input[value="1"]').checked = true;
-            }
-        }
         function saveandRestoreSelectedStyle() {
             // 获取下拉菜单元素
             var styleSelect = document.querySelector('#radioFlyout form select[name="style"]');
@@ -60,11 +26,10 @@
                 Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"] = selectedStyle;
                 // popup('已保存 selectedStyle = ' + selectedStyle);
             });
-
             // 从本地存储读取保存的值并设置下拉菜单
-            var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
-            if (savedValue) {
-                styleSelect.value = savedValue;
+            var savedSelectedStyle = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
+            if (savedSelectedStyle) {
+                styleSelect.value = savedSelectedStyle;
             } else {
                 styleSelect.value = "1"; // 默认值
             }
@@ -82,17 +47,17 @@
                 setasLockScreenBackground();
             }
         }
-        function openinBrowser() {
+       function openinBrowser() {
             if (imageData.length === 0) {
-                popup('imageData.length 为 0');
+                displayError('imageData.length 为 0');
                 return;
             }
-
             // 获取当前图片的URL
             var imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
-            window.location.href = imageUrl;
+            // window.location.href = imageUrl;
+            Windows.System.Launcher.launchUriAsync(new Windows.Foundation.Uri(imageUrl));
         }
-        function checkAppVersion() {
+       function checkAppVersion() {
             var localSettings = Windows.Storage.ApplicationData.current.localSettings;
             var pkgVersion = Windows.ApplicationModel.Package.current.id.version;
             var backgroundExecMgr = Windows.ApplicationModel.Background.BackgroundExecutionManager;
@@ -110,19 +75,13 @@
     <script src="/js/default.js"></script>
 </head>
 <body class="phone" style="overflow:auto">
-
         <main>
             <div id="background-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1; background-image:url('images/PNG5231.png');
         background-size:cover;
         background-position:center;">
             </div>
-
-            
-
             <h1 class="text-center">Anemo LockWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
-
             <p id="shapes" style="white-space:pre-line;color:deeppink;"></p>
-
             <p>
                 锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
                 Set the details on lock screen (Length limits may apply)
@@ -137,9 +96,9 @@
 
             <fieldset style="width:auto; float:left;">
                 <legend>选项 Options</legend>
-                <div>
+                <div style="display:none">
                     <label class="win-switch">
-                        <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox">
+                        <input type="checkbox" class="win-switch-input" id="isWallpaperSubmissionEnabled_CheckBox" disabled>
                         <span class="win-switch-content">提交时一并设置锁屏壁纸（尚未实现）<br>Set lock screen background while submit (not available yet)</span>
                         <span class="win-switch-track">
                             <span class="win-switch-thumb"></span>
@@ -156,34 +115,7 @@
                     </label>
                 </div>
             </fieldset>
-
             <div id="radioFlyout">
-                <!--<form>
-                    <fieldset style="width:auto; float:left;">
-                        <legend>选择磁贴文字排版</legend>
-                        <div>
-                            <input type="radio"
-                                   id="styleChoice1"
-                                   name="style"
-                                   value=1
-                                   checked />
-                            <label for="styleChoice1">1L4S 每一行（第一行作为标题）</label>
-                            <br />
-                            <input type="radio" id="styleChoice2" name="style" value=5 />
-                            <label for="styleChoice2">0L5S 每一行（每行都是小字）</label>
-                            <br />
-                            <input type="radio" id="styleChoice3" name="style" value=9 />
-                            <label for="styleChoice3">1L1S 前两行（第一行作为标题）</label>
-                            <br />
-                            <input type="radio" id="styleChoice4" name="style" value=3 />
-                            <label for="styleChoice4">1L0S 第一行（大字）</label>
-                            <br />
-                            <input type="radio" id="styleChoice5" name="style" value=4 />
-                            <label for="styleChoice5">0L1S 第一行（小字）</label>
-
-                        </div>
-                    </fieldset>
-                </form>-->
                 <form>
                     <fieldset style="width:auto; float:left;">
                         <legend>选择磁贴文字排版 Choice a tile style</legend>
@@ -199,9 +131,7 @@
                     </fieldset>
                 </form>
             </div>
-            
             <div id="appBar" data-win-control="WinJS.UI.AppBar">
-                <!-- 添加按钮 -->
                 <button data-win-control="WinJS.UI.AppBarCommand"
                         data-win-options="{label:'滚回 Rollback', icon:'&#xE1C5;', section:'selection', tooltip:'让文本框的内容变回上一次提交的状态'}"
                         onclick="getTile()"></button>
@@ -211,34 +141,22 @@
                 <button data-win-control="WinJS.UI.AppBarCommand"
                         data-win-options="{label:'关于 About', icon:'emoji2', section:'selection', tooltip:'关于本程序'}"
                         onclick="about()"></button>
-                <!--<button data-win-control="WinJS.UI.AppBarCommand"
+                <button data-win-control="WinJS.UI.AppBarCommand" id="openinBrowserButton"
                         data-win-options="{label:'浏览器打开 Open in Browser', icon:'&#xE114;', section:'selection'}"
-                        onclick="openinBrowser()"></button>-->
+                        onclick="openinBrowser()"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" id="prev-button"
                         data-win-options="{label:'昨天 Yday', icon:'left', section:'global', tooltip:'上一张壁纸'}"
                         onclick="prevWallpaper()"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand" id="downloadButton"
+                        data-win-options="{label:'下载 DL', icon:'download', section:'global', tooltip:'下载壁纸'}"
+                        onclick="saveImagetoLocal(currentWallpaperIndex)"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand"
                         data-win-options="{label:'提交 Sbmt.', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
                         onclick="submit()"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" id="next-button"
                         data-win-options="{label:'明天 Tmrw', icon:'right', section:'global', tooltip:'下一张壁纸'}"
                         onclick="nextWallpaper()"></button>
-
-                <!--<button data-win-control="WinJS.UI.AppBarCommand" id="radioButton"
-                        data-win-options="{label:'排版', icon:'list', section:'selection', tooltip:'选择文字磁贴的排版'}"
-                        onclick="showStyleSelection()"></button>
-                <button data-win-control="WinJS.UI.AppBarCommand" id="optionButton"
-                        data-win-options="{label:'选项', icon:'settings', section:'selection', tooltip:'设置锁屏背景相关选项'}"
-                        onclick="showOptions()"></button>-->
-            </div>
-
-            <!-- 切换按钮
-            <button id="prev-button" class="nav-button" disabled onclick="prev_wp()">←</button>
-            <button id="next-button" class="nav-button" disabled onclick="next_wp()">→</button> -->
-
+            </div>          
         </main>
-
     </body>
-
-
 </html>
