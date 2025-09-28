@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <m2:VisualElements DisplayName="Anemo LockWizard" Description="Anemo-LockWizard.Windows" ForegroundText="light" BackgroundColor="#02787D" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png" ToastCapable="true">
+      <m2:VisualElements DisplayName="Anemo LockWizard" Description="Anemo-LockWizard.Windows" ForegroundText="light" BackgroundColor="#02787D" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png" ToastCapable="false">
         <m2:LockScreen Notification="badgeAndTileText" BadgeLogo="images\BadgeLogo.png" />
         <m2:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png" DefaultSize="wide310x150Logo" Square70x70Logo="images\Square70x70Logo.png" Square310x310Logo="images\Square310x310Logo.png" ShortName="Anemo LockWizard">
           <m2:ShowNameOnTiles>
