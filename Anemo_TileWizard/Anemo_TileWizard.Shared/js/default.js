@@ -60,10 +60,10 @@ var imageData = []; // 存储所有图片数据
                 isWallpaperSubmissionEnabled_CheckBox.addEventListener("change", function (e) {
                     Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"] = isWallpaperSubmissionEnabled_CheckBox.checked;
                 });
-                var switchtoNextWallpaperAfterDownload_CheckBox = document.getElementById("switchtoNextWallpaperAfterDownload_CheckBox");
-                switchtoNextWallpaperAfterDownload_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["switchtoNextWallpaperAfterDownload_CheckBox"];
-                switchtoNextWallpaperAfterDownload_CheckBox.addEventListener("change", function (e) {
-                    Windows.Storage.ApplicationData.current.localSettings.values["switchtoNextWallpaperAfterDownload_CheckBox"] = switchtoNextWallpaperAfterDownload_CheckBox.checked;
+                var switchtoPrevWallpaperAfterDownload_CheckBox = document.getElementById("switchtoPrevWallpaperAfterDownload_CheckBox");
+                switchtoPrevWallpaperAfterDownload_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["switchtoPrevWallpaperAfterDownload_CheckBox"];
+                switchtoPrevWallpaperAfterDownload_CheckBox.addEventListener("change", function (e) {
+                    Windows.Storage.ApplicationData.current.localSettings.values["switchtoPrevWallpaperAfterDownload_CheckBox"] = switchtoPrevWallpaperAfterDownload_CheckBox.checked;
                 });
                 checkTileUpdateTaskRegistered();
             }
@@ -505,12 +505,11 @@ function saveImagetoLocal(targetWallpaperIndex) {
     }).then(function (copiedFile) {
         displayShape(filename + " 已保存到图片库");
     });
-    if (Windows.Storage.ApplicationData.current.localSettings.values["switchtoNextWallpaperAfterDownload_CheckBox"]) {
-        nextWallpaper();
+    if (Windows.Storage.ApplicationData.current.localSettings.values["switchtoPrevWallpaperAfterDownload_CheckBox"]) {
+        prevWallpaper();
     }
 
 }
-
 
 function saveFileToPicturesLibrary(file, folderName, targetFileName) {
     var picturesFolder = Windows.Storage.KnownFolders.picturesLibrary;
@@ -584,15 +583,13 @@ function copyDescription() {
 
 function displayError(str) {
     const errors=document.getElementById("errors");
-    errors.textContent += str;
-    errors.textContent += '\n';
+    errors.textContent = str + '\n' +errors.textContent;
 }
 
 function displayShape(str) {
     if (true) {
         const shapes = document.getElementById("shapes");
-        shapes.textContent += str;
-        shapes.textContent += '\n';
+        shapes.textContent = str + '\n' + shapes.textContent;
     }
 }
 

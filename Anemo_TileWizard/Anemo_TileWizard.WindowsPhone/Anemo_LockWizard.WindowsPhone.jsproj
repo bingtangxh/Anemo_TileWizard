@@ -47,6 +47,7 @@
     <AppxPackageDir>C:\AppPackages\</AppxPackageDir>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
     <AppxBundle>Never</AppxBundle>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -77,10 +78,18 @@
     <Content Include="css\ui-themed.css" />
     <Content Include="css\ui-themed.theme-dark.css" />
     <Content Include="css\ui-themed.theme-light.css" />
+    <Content Include="Square150x150Logo.png" />
     <Content Include="wallpaper.html" />
+    <Content Include="WMAppManifest.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.Phone.WinJS.2.1, Version=1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="properties\" />
   </ItemGroup>
   <Import Project="..\Anemo_TileWizard.Shared\Anemo_LockWizard.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />

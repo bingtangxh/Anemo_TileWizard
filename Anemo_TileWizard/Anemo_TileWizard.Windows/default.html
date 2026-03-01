@@ -231,7 +231,6 @@
              ">
         </div>
         <h1 class="text-center">Anemo LockWizard <!--<span style="color:red">(Pre-Release)</span>--></h1>
-        <p id="shapes" style="white-space:pre-line;color:deeppink;"></p>
         <p>锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
         Set the details on lock screen (Length limits may apply)
         </p>
@@ -240,6 +239,7 @@
         <textarea id="tileDetail2" placeholder="段落 2&#10;Sentence 2" maxlength="254"></textarea>
         <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）&#10;Sentence 3 (Won't show on lock screen in Windows 10/11 or Windows Phone 8.1)" maxlength="254"></textarea>
         <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）&#10;Sentence 4 (Only show on lock screen in Windows 8.1 or live tile of Windows 10 Mobile or Tablet mode and Windows Phone 8.1)" maxlength="254"></textarea>
+        <p id="shapes" style="white-space:pre-line;color:deeppink;"></p>
         <p id="errors" style="white-space:pre-line;color:red;"></p>
         <div id="radioFlyout" data-win-control="WinJS.UI.Flyout">
             <form>
@@ -314,7 +314,6 @@
                     data-win-options="{label:'注销后台任务', icon:'&#xE106', section:'selection', tooltip:'点击强制运行'}"
                     onclick="unregisterBackgroundTask()"></button>-->
         </div>
-
         <div id="optionsFlyout" data-win-control="WinJS.UI.Flyout">
             <fieldset style="width:420px; float:left;">
                 <legend>选项 Options</legend>
@@ -338,8 +337,8 @@
                 </div>
                 <div>
                     <label class="win-switch">
-                        <input type="checkbox" class="win-switch-input" id="switchtoNextWallpaperAfterDownload_CheckBox">
-                        <span class="win-switch-content">下载完成后切换至下一张壁纸<br>Switch to the next wallpaper after downloaded</span>
+                        <input type="checkbox" class="win-switch-input" id="switchtoPrevWallpaperAfterDownload_CheckBox">
+                        <span class="win-switch-content">下载完成后切换至上一张壁纸<br>Switch to the prev wallpaper after downloaded</span>
                         <span class="win-switch-track">
                             <span class="win-switch-thumb"></span>
                         </span>

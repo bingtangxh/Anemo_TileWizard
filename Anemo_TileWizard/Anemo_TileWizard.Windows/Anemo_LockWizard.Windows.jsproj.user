@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ReferenceCachePath>C:\Users\Weslie\AppData\Local\Temp\Anemo_LockWizard.Windows_refcache</ReferenceCachePath>
+    <ReferenceCachePath>C:\Users\ninei\AppData\Local\Temp\Anemo_LockWizard.Windows_refcache</ReferenceCachePath>
     <AppxPackageIsForStore>False</AppxPackageIsForStore>
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
@@ -11,10 +11,18 @@
     <MachineName>192.168.1.106</MachineName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <MachineName>192.168.1.106</MachineName>
+    <MachineName>DKR-LAJI2</MachineName>
     <DebuggerFlavor>AppHostLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebuggerType>NativeOnly</DebuggerType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <MachineName>DKR-LAJI2</MachineName>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <MachineName>DKR-LAJI2</MachineName>
+    <DebuggerFlavor>AppHostRemoteDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>

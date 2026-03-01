@@ -2,9 +2,205 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="/css/ui-themed.css" rel="stylesheet" />
+    <script src="//Microsoft.Phone.WinJS.2.1/js/base.js"></script>
+    <script src="//Microsoft.Phone.WinJS.2.1/js/ui.js"></script>
+    <script>
+        var currentWallpaperIndex = 0; // 当前显示的图片索引
+        var images = []; // 存储所有图片元素
+        var imageData = []; // 存储所有图片数据
+        const isPhoneMode = true;
+        var useLocalImage = true;
+        var imageUrl = '';
+        var inBasket = false;
+        var fileId = "MyBingWallpaper";
+       (function () {
+            "use strict";
+            var app = WinJS.Application;
+            var activation = Windows.ApplicationModel.Activation;
+            app.onactivated = function (args) {
+                getBingWallpaper();
+                var pickerUI = args.detail.fileOpenPickerUI;
+                args.setPromise(WinJS.UI.processAll().then(function () {
+                    // Navigate to either the first scenario or to the last running scenario
+                    // before suspension or termination.
+                    try {
+                        return WinJS.Navigation.navigate("/wallpaper.html", pickerUI);
+                    } catch (e) {
+                        displayError(e.toString());
+                    }
+                    displayShape('Touched me');
+                }));
+                // displayShape(args.detail.toString());
+                // displayShape(String(args.detail.kind === Windows.ApplicationModel.Activation.ActivationKind.fileOpenPicker));
+                
+                if (true) {
+                    document.getElementById("submit-button").addEventListener("click", function (pickerUI) {
+                        
+                        imageUrl = 'https://www.bing.com' + imageData[currentWallpaperIndex].url;
+                        downloadImageToLocal(imageUrl).done(function (file) {
+                            if (file) {
+                                try {
+                                    var isAdded = pickerUI.addFile(fileId, file);
+                                    // var isAdded = WinJS.Navigation.navigate(file.name, pickerUI);
+                                    if (isAdded === Windows.Storage.Pickers.Provider.AddFileResult.added) {
+                                        displayShape("Successfully returned to system: " + file.name);
+                                    } else {
+                                        displayError('Returned file rejected');
+                                        displayShape(isAdded.toString());
+                                    }
+                                } catch (e) {
+                                    displayError(e.toString());
+                                }
+                            }
+                        });
+                        
+                    }, false);
+                }
+            };
+            app.oncheckpoint = function (args) {
+                // TODO: 即将挂起此应用程序。在此处保存
+                //需要在挂起中保留的任何状态。您可以使用
+                // WinJS.Application.sessionState 对象，该对象将在
+                //挂起中自动保存和恢复。如果您需要在
+                //挂起应用程序之前完成异步操作，请调用
+                // args.setPromise()。
+            };
+
+            app.start();
+        })();
+       function displayError(str) {
+           const errors = document.getElementById("errors");
+           errors.textContent = str + '\n' + errors.textContent;
+       }
+       function displayShape(str) {
+           if (true) {
+               const shapes = document.getElementById("shapes");
+               shapes.textContent = str + '\n' + shapes.textContent;
+           }
+       }
+       function getBingWallpaper() {
+           // 首先检查网络状态
+           var connectionProfile = Windows.Networking.Connectivity.NetworkInformation.getInternetConnectionProfile();
+           if (connectionProfile && connectionProfile.getNetworkConnectivityLevel() ===
+               Windows.Networking.Connectivity.NetworkConnectivityLevel.internetAccess) {
+               // 有网络连接，尝试获取Bing壁纸
+               // var useEnglishDescription_CheckBox = document.getElementById("useEnglishDescription_CheckBox");
+               var apiUrl;
+               if (true) {
+                   apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=en-US'; // n=8 表示获取8张壁纸
+               } else {
+                   apiUrl = 'https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN'; // n=8 表示获取8张壁纸
+               }
+               apiUrl += '&_ts=' + Date.now();
+               // 使用传统的Promise错误处理方式
+               WinJS.xhr({
+                   url: apiUrl,
+                   timeout: 5000,
+                   headers: {
+                       "Cache-Control": "no-cache",
+                       "Pragma": "no-cache",
+                       "If-Modified-Since": "Thu, 01 Jan 1970 00:00:00 GMT",
+                       //"Accept-Language": "en-US"
+                   }
+               }).then(
+                   function (response) {
+                       try {
+                           var data = JSON.parse(response.responseText);
+                           if (data.images && data.images.length > 0) {
+                               imageData = data.images;
+                               useLocalImage = false;
+                               changeBackground(currentWallpaperIndex);
+                               document.getElementById('prev-button').disabled = false;
+                               document.getElementById('next-button').disabled = false;
+                               return;
+                           }
+                       } catch (e) {
+                           console.error('解析Bing数据失败:', e);
+                           displayError('解析数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nAnalyzing data from Bing failed.');
+                           useLocalImage = true;
+                       }
+                   },
+                   function (error) { // 这是Promise的reject处理函数
+                       console.error('获取Bing壁纸失败:', error);
+                       displayError('获取数据失败，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。看看是不是系统时间不准。\nGetting data from Bing failed. May be it is due to too wrong system date & time.');
+                       useLocalImage = true;
+                   }
+               );
+
+           } else {
+               // 无网络连接，直接使用本地图片
+               displayError('没有互联网连接，已经调用默认的背景，无法设置为锁屏壁纸，也不能复制描述。\nSeems like there is no Internet connection, obtaining wallpaper failed.');
+               console.log('无网络连接，使用本地图片');
+               useLocalImage = true;
+           }
+       }
+       function changeBackground(index) {
+           if (imageData.length > 0 && index >= 0 && index < imageData.length) {
+               var imageUrl = 'https://www.bing.com' + imageData[index].url;
+               document.getElementById('background-container').style.backgroundImage =
+                   'url("' + imageUrl + '")';
+           } else {
+               displayError('imageData.length 为 0 或 index 已经超出边界');
+               return;
+           }
+       }
+       function popup(message) {
+           Windows.UI.Popups.MessageDialog(message).showAsync();
+       }
+       function downloadImageToLocal(imageUrl) {
+           return WinJS.xhr({ url: imageUrl, responseType: 'blob' })
+               .then(function (response) {
+                   // 将 Blob 转换为文件
+                   var blob = response.response;
+                   return Windows.Storage.ApplicationData.current.temporaryFolder.createFileAsync('lockScreenImage.jpg', Windows.Storage.CreationCollisionOption.replaceExisting)
+                       .then(function (file) {
+                           return file.openAsync(Windows.Storage.FileAccessMode.readWrite)
+                               .then(function (stream) {
+                                   var inputStream = blob.msDetachStream();
+                                   return Windows.Storage.Streams.RandomAccessStream.copyAsync(inputStream, stream)
+                                       .then(function () {
+                                           return stream.flushAsync();
+                                       })
+                                       .then(function () {
+                                           stream.close();
+                                           return file;
+                                       });
+                               });
+                       });
+               });
+       }
+       // 明天的壁纸
+       function nextWallpaper() {
+           currentWallpaperIndex = (currentWallpaperIndex - 1 + imageData.length) % imageData.length;
+           changeBackground(currentWallpaperIndex);
+       }
+       // 昨天的壁纸
+       function prevWallpaper() {
+           currentWallpaperIndex = (currentWallpaperIndex + 1) % imageData.length;
+           changeBackground(currentWallpaperIndex);
+       }
+       function submitImage() {
+           try {
+
+           } catch (e) {
+               displayError(e);
+           }
+       }
+    </script>
     <title></title>
 </head>
+
 <body>
-    <div>啥用都没有，就只是 Placeholder</div>
+    <div id="background-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1; background-image:url('images/PNG5231.png');
+        background-size:cover;
+        background-position:center;">
+    </div>
+    <div><h1>啥用都没有，就只是 Placeholder</h1></div>
+    <p id="shapes" style="white-space:pre-line;color:deeppink;"></p>
+    <p id="errors" style="white-space:pre-line;color:red;"></p>
+    <button onclick="prevWallpaper()" id="prev-button" style="margin-right:5px;">←</button>
+    <button onclick="submitImage()" id="submit-button">提交 Sbmt.</button>
+    <button onclick="nextWallpaper()" id="next-button">→</button>
 </body>
 </html>

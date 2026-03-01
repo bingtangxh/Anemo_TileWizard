@@ -93,7 +93,22 @@
             <textarea id="tileDetail4" placeholder="段落 4 （仅在 Windows Phone 8.1 或 Windows 10 移动版和平板模式的动态磁贴和 Windows 8.1 锁定屏幕上显示）&#10;Sentence 4 (Only show on lock screen in Windows 8.1 or live tile of Windows 10 Mobile or Tablet mode and Windows Phone 8.1)" maxlength="254"></textarea>
             
             <p id="errors" style="white-space:pre-line;color:red;"></p>
-
+            <div id="radioFlyout">
+                <form>
+                    <fieldset style="width:auto; float:left;">
+                        <legend>选择磁贴文字排版 Choice a tile style</legend>
+                        <div>
+                            <select id="styleSelect" name="style">
+                                <option value="1" selected>1L4S （第一行作为标题）</option>
+                                <option value="5">0L5S （每行都是小字）</option>
+                                <option value="9">1L1S （第一行作为标题）</option>
+                                <option value="3">1L0S （大字）</option>
+                                <option value="4">0L1S （小字）</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
             <fieldset style="width:auto; float:left;">
                 <legend>选项 Options</legend>
                 <div style="display:none">
@@ -115,22 +130,7 @@
                     </label>
                 </div>
             </fieldset>
-            <div id="radioFlyout">
-                <form>
-                    <fieldset style="width:auto; float:left;">
-                        <legend>选择磁贴文字排版 Choice a tile style</legend>
-                        <div>
-                            <select id="styleSelect" name="style">
-                                <option value="1" selected>1L4S （第一行作为标题）</option>
-                                <option value="5">0L5S （每行都是小字）</option>
-                                <option value="9">1L1S （第一行作为标题）</option>
-                                <option value="3">1L0S （大字）</option>
-                                <option value="4">0L1S （小字）</option>
-                            </select>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+            
             <div id="appBar" data-win-control="WinJS.UI.AppBar">
                 <button data-win-control="WinJS.UI.AppBarCommand"
                         data-win-options="{label:'滚回 Rollback', icon:'&#xE1C5;', section:'selection', tooltip:'让文本框的内容变回上一次提交的状态'}"
@@ -151,7 +151,7 @@
                         data-win-options="{label:'下载 DL', icon:'download', section:'global', tooltip:'下载壁纸'}"
                         onclick="saveImagetoLocal(currentWallpaperIndex)"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand"
-                        data-win-options="{label:'提交 Sbmt.', icon:'setlockscreen', section:'global', tooltip:'提交输入的内容'}"
+                        data-win-options="{label:'提交 Sbmt.', icon:'setlockscreen', section:'selection', tooltip:'提交输入的内容'}"
                         onclick="submit()"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" id="next-button"
                         data-win-options="{label:'明天 Tmrw', icon:'right', section:'global', tooltip:'下一张壁纸'}"
