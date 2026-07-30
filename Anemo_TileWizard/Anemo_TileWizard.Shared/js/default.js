@@ -55,25 +55,35 @@ var imageData = []; // 存储所有图片数据
  
             getTile();
             if (!isPhoneMode) {
+                
                 var isWallpaperSubmissionEnabled_CheckBox = document.getElementById("isWallpaperSubmissionEnabled_CheckBox");
-                isWallpaperSubmissionEnabled_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"];
+                isWallpaperSubmissionEnabled_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"] || !Windows.Storage.ApplicationData.current.localSettings.values["isItNotBeRunFirstTime"];
                 isWallpaperSubmissionEnabled_CheckBox.addEventListener("change", function (e) {
                     Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"] = isWallpaperSubmissionEnabled_CheckBox.checked;
                 });
                 var switchtoPrevWallpaperAfterDownload_CheckBox = document.getElementById("switchtoPrevWallpaperAfterDownload_CheckBox");
-                switchtoPrevWallpaperAfterDownload_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["switchtoPrevWallpaperAfterDownload_CheckBox"];
+                switchtoPrevWallpaperAfterDownload_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["switchtoPrevWallpaperAfterDownload_CheckBox"] || !Windows.Storage.ApplicationData.current.localSettings.values["isItNotBeRunFirstTime"];
                 switchtoPrevWallpaperAfterDownload_CheckBox.addEventListener("change", function (e) {
                     Windows.Storage.ApplicationData.current.localSettings.values["switchtoPrevWallpaperAfterDownload_CheckBox"] = switchtoPrevWallpaperAfterDownload_CheckBox.checked;
                 });
                 checkTileUpdateTaskRegistered();
             }
             var isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox = document.getElementById("isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox");
-            isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"];
+            isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"] || !Windows.Storage.ApplicationData.current.localSettings.values["isItNotBeRunFirstTime"];
+
             isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.addEventListener("change", function (e) {
                 Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"] = isDescriptionCopyEnabledWhileSwitchingWallpaper_CheckBox.checked;
             });
-
+            if (!Windows.Storage.ApplicationData.current.localSettings.values["isItNotBeRunFirstTime"]) {
+                if (!isPhoneMode) {
+                    isWallpaperSubmissionEnabled_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["isWallpaperSubmissionEnabled"] = true;
+                    switchtoPrevWallpaperAfterDownload_CheckBox.checked = Windows.Storage.ApplicationData.current.localSettings.values["switchtoPrevWallpaperAfterDownload_CheckBox"] = true;
+                }
+                Windows.Storage.ApplicationData.current.localSettings.values["isDescriptionCopyEnabledWhileSwitchingWallpaper"] = true;
+                Windows.Storage.ApplicationData.current.localSettings.values["isItNotBeRunFirstTime"] = true;
+            }
             getBingWallpaper();
+            // copyDescription();
 
             saveandRestoreSelectedStyle();
 

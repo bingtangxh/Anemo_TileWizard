@@ -112,6 +112,7 @@
             var radioFlyout = document.getElementById("radioFlyout").winControl;
             var radioButton = document.getElementById("radioButton").winControl;
             var savedValue = Windows.Storage.ApplicationData.current.localSettings.values["selectedStyle"];
+
             radioFlyout.show(radioButton);
         }
         function openinBrowser() {
@@ -234,7 +235,7 @@
         <p>锁屏详细信息设置（太长会显示不下，超过 254 字可能直接不显示）<br />
         Set the details on lock screen (Length limits may apply)
         </p>
-        <textarea id="tileDetail0" placeholder="标题&#10;Title" maxlength="254"></textarea>
+        <textarea id="tileDetail0" placeholder="标题 （请注意从底部的应用命令栏选取排版，有可能只显示前两行或第一行）&#10;Title (Please note to select the style from the app command bar at the bottom; it may only show the first two lines or just the first line)" maxlength="254"></textarea>
         <textarea id="tileDetail1" placeholder="段落 1&#10;Sentence 1" maxlength="254"></textarea>
         <textarea id="tileDetail2" placeholder="段落 2&#10;Sentence 2" maxlength="254"></textarea>
         <textarea id="tileDetail3" placeholder="段落 3 （在 Windows 10/11 和 Windows Phone 8.1 锁定屏幕上不显示）&#10;Sentence 3 (Won't show on lock screen in Windows 10/11 or Windows Phone 8.1)" maxlength="254"></textarea>
